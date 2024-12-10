@@ -4,6 +4,7 @@
 
 #### chip related
 include(${SdkRootDirPath}/devices/DSC/variable.cmake)
+mcux_set_variable(device_root devices)
 mcux_set_variable(device MC56F83786)
 mcux_set_variable(soc_series MC56F83xxx)
 mcux_set_variable(soc_periph periph)

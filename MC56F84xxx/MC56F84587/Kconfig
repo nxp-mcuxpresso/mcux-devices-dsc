@@ -4,7 +4,7 @@
 
 rsource "Kconfig.chip"
 rsource "drivers/Kconfig"
-rsource "../../../dsp56800/Kconfig.common"
+rsource "../../../../devices/dsp56800/Kconfig.common"
 rsource "Kconfig.defconfig"
 
 ## Project segment and component dependency data

@@ -4,7 +4,7 @@
 
 #### device spepcific drivers
 include(${SdkRootDirPath}/devices/dsp56800/device_header.cmake)
-mcux_add_cmakelists(${SdkRootDirPath}/devices/DSC/MC56F84xxx/MC56F84451/drivers)
+mcux_add_cmakelists(${SdkRootDirPath}/${device_root}/DSC/MC56F84xxx/MC56F84451/drivers)
 
 #### DSC shared drivers/components/middlewares, project segments
 include(${SdkRootDirPath}/devices/DSC/shared.cmake)
