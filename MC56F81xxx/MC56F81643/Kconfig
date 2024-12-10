@@ -1,0 +1,19 @@
+# Copyright 2024 NXP
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+rsource "Kconfig.chip"
+rsource "drivers/Kconfig"
+rsource "../../../dsp56800/Kconfig.common"
+rsource "Kconfig.defconfig"
+
+## Project segment and component dependency data
+config MCUX_HW_DEVICE_MC56F81643
+    # bool "Device MC56F81643"
+    bool
+    default y
+
+    # component dependency
+    select MCUX_COMPONENT_driver.dsc_edma if MCUX_COMPONENT_driver.dsc_i2c_edma
+    select MCUX_COMPONENT_driver.dsc_edma if MCUX_COMPONENT_driver.qsci_edma
+    select MCUX_COMPONENT_component.qsci_adapter if MCUX_COMPONENT_utility.debug_console_lite

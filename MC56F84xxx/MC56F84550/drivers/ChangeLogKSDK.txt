@@ -1,0 +1,14 @@
+/*!
+@page driver_log Driver Change Log
+@section clock CLOCK
+
+ The current CLOCK driver version is 2.1.0.
+
+ - 2.1.0
+   - Accumulated bug fix
+   - MISRA warning fix
+
+ - 2.0.0
+   - Initial version.
+
+*/

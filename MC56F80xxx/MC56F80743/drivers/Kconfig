@@ -1,0 +1,15 @@
+# Copyright 2024 NXP
+#
+# SPDX-License-Identifier: BSD-3-Clause
+
+menu "Device specific drivers configuration"
+
+    config MCUX_COMPONENT_driver.clock
+         bool "Use driver clock"
+         default y
+
+    config MCUX_COMPONENT_driver.dsc_sim_mc56f80xxx
+         bool "Use driver sim"
+         default y
+
+endmenu

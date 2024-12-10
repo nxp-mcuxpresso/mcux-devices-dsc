@@ -1,0 +1,43 @@
+device.hardware_data:
+  section-type: "manifest_content"
+  belong_to: set.device.MC56F82723
+  contents:
+    generated_from_chip_model: "yes"
+    devices:
+      - id: "MC56F82723"
+        full_name: "MC56F82723"
+        name: "MC56F82723"
+        platform: "DSC"
+        series: "56F82000"
+        family: "56F827xx"
+        subfamily: "56F82723"
+        frequency_mhz: 100
+        core:
+          - name: "DSP56800EX"
+            type: "dsp56800ex"
+            id: "core0"
+            description: "DSP56800EX core"
+            fpu: "NO_FPU"
+        memory:
+          memoryBlock:
+            - id: "PROGRAM_FLASH"
+              name: "PROGRAM_FLASH"
+              addr: 0x0
+              size: 0x8000
+              type: "Flash"
+              access: "RO"
+              default: true
+            - id: "SRAM"
+              name: "SRAM"
+              addr: 0xf000
+              size: 0x1800
+              type: "RAM"
+              access: "RW"
+              default: true
+        total_memory:
+          ram_size_kb: 6
+          flash_size_kb: 32
+        part:
+          - name: "MC56F82723VLC"
+          - name: "MC56F82723VFM"
+        modules:

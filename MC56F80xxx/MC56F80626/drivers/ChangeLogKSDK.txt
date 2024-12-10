@@ -1,0 +1,20 @@
+/*!
+@page driver_log Driver Change Log
+@section clock CLOCK
+
+ The current CLOCK driver version is 2.0.0.
+
+ - 2.0.0
+   - Initial version.
+
+*/
+
+/*!
+@page driver_log Driver Change Log
+@section sim SIM
+ The current SIM driver version is 2.0.0.
+
+ - 2.0.0
+   - Initial version.
+
+*/

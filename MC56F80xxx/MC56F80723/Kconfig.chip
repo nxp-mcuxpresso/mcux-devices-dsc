@@ -1,0 +1,205 @@
+# core related
+config MCUX_HW_CORE
+    string
+    default "dsp56800ef"
+
+config MCUX_HW_CORE_DSP56800EF
+    bool
+    default y
+
+config MCUX_HW_CORE_DSC
+    bool
+    default y
+
+config MCUX_HW_CORE_ID
+    string
+    default "core0"
+
+config MCUX_HW_CORE_ID_CORE0
+    bool
+    default y
+
+config MCUX_HW_DEVICE_CORE
+    string
+    default "MC56F80723"
+
+config MCUX_HW_FPU
+    string
+    default "SP_FPU"
+
+config MCUX_HW_FPU_TYPE
+    string
+    default "sp_fpu"
+
+config MCUX_HW_NO_FPU
+    bool
+    default n
+
+config MCUX_HW_SOC_SERIES_DSC
+    bool
+    default y
+
+config MCUX_HW_SOC_SINGLECORE_DEVICE
+    bool
+    default y
+
+# device related
+
+config MCUX_HW_DEVICE_ID_MC56F80723
+    bool
+
+choice
+    prompt "Device MC56F80723 Part"
+    config MCUX_HW_DEVICE_PART_MC56F80723VLC
+        bool "Device part MC56F80723VLC"
+        select MCUX_HW_DEVICE_ID_MC56F80723
+endchoice
+
+config MCUX_HW_DEVICE_ID
+    string
+    default "MC56F80723" if MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_DEVICE_PART
+    string
+    default "MC56F80723VLC" if MCUX_HW_DEVICE_PART_MC56F80723VLC
+
+# For chipmodel generated files
+config MCUX_TOOLCHAIN_LINKER_DEVICE_PREFIX
+    string
+    default "MC56F80723" if MCUX_HW_DEVICE_ID_MC56F80723
+
+# Toolchain related
+
+config MCUX_TOOLCHAIN_JLINK_CPU_IDENTIFIER
+    string
+    default "MC56F80723" if MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_TOOLCHAIN_CODEWARRIOR_CPU_IDENTIFIER
+    string
+    default "MC56F807xx" if MCUX_HW_DEVICE_ID_MC56F80723
+
+# ip information
+config MCUX_HW_IP_DriverType_DSC_CADC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_CMP
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_COP
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_CRC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_DMAMUX
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_EDMA
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_EQDC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_EVTG
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_EWM
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_FTFA
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_GPIO
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_LPI2C
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_MCM
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_OPAMP
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_PIT
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_PMC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_PWM
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+#config MCUX_HW_IP_DriverType_DSC_SIM
+#    bool
+#    default y
+#    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_TMR
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_DSC_XBARA
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_FMC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_INTC
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_OCCS
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_QSCI
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
+
+config MCUX_HW_IP_DriverType_QUEUED_SPI
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F80723
