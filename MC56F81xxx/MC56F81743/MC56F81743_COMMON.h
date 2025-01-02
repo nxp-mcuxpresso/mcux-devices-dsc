@@ -35,6 +35,8 @@
 #if !defined(MC56F81743_COMMON_H_)
 #define MC56F81743_COMMON_H_                     /**< Symbol preventing repeated inclusion */
 
+#include "MC56F81743_features.h"
+
 /** Memory map major version (memory maps with equal major version number are
  * compatible) */
 #define MCU_MEM_MAP_VERSION 0x0000U
