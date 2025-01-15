@@ -48,7 +48,7 @@ config MCUX_HW_SOC_SINGLECORE_DEVICE
 config MCUX_HW_DEVICE_ID_MC56F82313
     bool
 
-choice
+choice MCUX_HW_DEVICE_PART_MC56F82313
     prompt "Device MC56F82313 Part"
     config MCUX_HW_DEVICE_PART_MC56F82313VLC
         bool "Device part MC56F82313VLC"

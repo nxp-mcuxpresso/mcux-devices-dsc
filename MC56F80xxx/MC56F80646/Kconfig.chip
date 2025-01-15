@@ -48,7 +48,7 @@ config MCUX_HW_SOC_SINGLECORE_DEVICE
 config MCUX_HW_DEVICE_ID_MC56F80646
     bool
 
-choice
+choice MCUX_HW_DEVICE_PART_MC56F80646
     prompt "Device MC56F80646 Part"
     config MCUX_HW_DEVICE_PART_MC56F80646VLF
         bool "Device part MC56F80646VLF"
