@@ -51,10 +51,10 @@ config MCUX_HW_DEVICE_ID_MC56F83789
 choice MCUX_HW_DEVICE_PART_MC56F83789
     prompt "Device MC56F83789 Part"
     config MCUX_HW_DEVICE_PART_MC56F83789VLL
-        bool "Device part MC56F83789VLL"
+        bool "MC56F83789VLL"
         select MCUX_HW_DEVICE_ID_MC56F83789
     config MCUX_HW_DEVICE_PART_MC56F83789AVLL
-        bool "Device part MC56F83789AVLL"
+        bool "MC56F83789AVLL"
         select MCUX_HW_DEVICE_ID_MC56F83789
 endchoice
 

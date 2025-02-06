@@ -9,15 +9,15 @@ config MCUX_HAS_COMPONENT_driver.dsc_flash_romapi
 menu "Device specific drivers configuration"
 
     config MCUX_COMPONENT_driver.clock
-         bool "Use driver clock"
+         bool "clock"
          default y
 
     config MCUX_COMPONENT_driver.dsc_flash_romapi
-         bool "Use driver flash"
+         bool "flash"
          default y if MCUX_HAS_COMPONENT_driver.dsc_flash_romapi
 
     config MCUX_COMPONENT_driver.dsc_sim_mc56f83xxx
-         bool "Use driver sim"
+         bool "sim"
          default y
 
 endmenu

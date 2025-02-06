@@ -51,7 +51,7 @@ config MCUX_HW_DEVICE_ID_MC56F80623
 choice MCUX_HW_DEVICE_PART_MC56F80623
     prompt "Device MC56F80623 Part"
     config MCUX_HW_DEVICE_PART_MC56F80623VLC
-        bool "Device part MC56F80623VLC"
+        bool "MC56F80623VLC"
         select MCUX_HW_DEVICE_ID_MC56F80623
 endchoice
 

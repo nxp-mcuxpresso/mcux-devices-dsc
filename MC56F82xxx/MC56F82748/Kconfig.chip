@@ -51,10 +51,10 @@ config MCUX_HW_DEVICE_ID_MC56F82748
 choice MCUX_HW_DEVICE_PART_MC56F82748
     prompt "Device MC56F82748 Part"
     config MCUX_HW_DEVICE_PART_MC56F82748VLH
-        bool "Device part MC56F82748VLH"
+        bool "MC56F82748VLH"
         select MCUX_HW_DEVICE_ID_MC56F82748
     config MCUX_HW_DEVICE_PART_MC56F82748MLH
-        bool "Device part MC56F82748MLH"
+        bool "MC56F82748MLH"
         select MCUX_HW_DEVICE_ID_MC56F82748
 endchoice
 
