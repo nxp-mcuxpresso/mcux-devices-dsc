@@ -18,27 +18,6 @@
 
 /*!
 @page driver_log Driver Change Log
-@section flash FLASH
-
- The current FLASH driver version is 3.3.0.
-
- - 3.3.0
-   - Use unified entry to invoke ROM flash API
-
- - 3.2.0
-   - Change file name to fsl_flash.x
-
- - 3.1.0
-   - Accumulated bug fix
-   - MISRA warning fix
-
- - 3.0.0
-   - Initial version.
-
-*/
-
-/*!
-@page driver_log Driver Change Log
 @section sim SIM
  The current SIM driver version is 2.2.0.
 

@@ -1,13 +1,13 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2020-07-21
-**     Build:               b231116
+**     Build:               b250310
 **
 **     Abstract:
 **         Chip specific module features.
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2023 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -63,6 +63,8 @@
 #define FSL_FEATURE_SOC_PMC_COUNT (1)
 /* @brief PWM availability on the SoC. */
 #define FSL_FEATURE_SOC_PWM_COUNT (1)
+/* @brief QDC availability on the SoC. */
+#define FSL_FEATURE_SOC_QDC_COUNT (1)
 /* @brief QSCI availability on the SoC. */
 #define FSL_FEATURE_SOC_QSCI_COUNT (2)
 /* @brief SIM availability on the SoC. */
@@ -122,15 +124,11 @@
 
 /* EDMA module features */
 
-/* @brief Number of DMA channels (related to number of registers TCD, DCHPRI, bit fields ERQ[ERQn], EEI[EEIn],
- * INT[INTn], ERR[ERRn], HRS[HRSn] and bit field widths ES[ERRCHN], CEEI[CEEI], SEEI[SEEI], CERQ[CERQ], SERQ[SERQ],
- * CDNE[CDNE], SSRT[SSRT], CERR[CERR], CINT[CINT], TCDn_CITER_ELINKYES[LINKCH], TCDn_CSR[MAJORLINKCH],
- * TCDn_BITER_ELINKYES[LINKCH]). (Valid only for eDMA modules.) */
+/* @brief Number of DMA channels (related to number of registers TCD, DCHPRI, bit fields ERQ[ERQn], EEI[EEIn], INT[INTn], ERR[ERRn], HRS[HRSn] and bit field widths ES[ERRCHN], CEEI[CEEI], SEEI[SEEI], CERQ[CERQ], SERQ[SERQ], CDNE[CDNE], SSRT[SSRT], CERR[CERR], CINT[CINT], TCDn_CITER_ELINKYES[LINKCH], TCDn_CSR[MAJORLINKCH], TCDn_BITER_ELINKYES[LINKCH]). (Valid only for eDMA modules.) */
 #define FSL_FEATURE_EDMA_MODULE_CHANNEL (4)
 /* @brief Total number of DMA channels on all modules. */
 #define FSL_FEATURE_EDMA_DMAMUX_CHANNELS (4)
-/* @brief Number of DMA channel groups (register bit fields CR[ERGA], CR[GRPnPRI], ES[GPE], DCHPRIn[GRPPRI]). (Valid
- * only for eDMA modules.) */
+/* @brief Number of DMA channel groups (register bit fields CR[ERGA], CR[GRPnPRI], ES[GPE], DCHPRIn[GRPPRI]). (Valid only for eDMA modules.) */
 #define FSL_FEATURE_EDMA_CHANNEL_GROUP_COUNT (1)
 /* @brief Has DMA_Error interrupt vector. */
 #define FSL_FEATURE_EDMA_HAS_ERROR_IRQ (1)
@@ -157,6 +155,8 @@
 #define FSL_FEATURE_DMAMUX_HAS_A_ON (0)
 /* @brief Register CHCFGn width. */
 #define FSL_FEATURE_DMAMUX_CHCFG_REGISTER_WIDTH (8)
+/* @brief Register CHCFGn sorted in order 3, 2 ,1 ,0 ,7 ,6 ,5 ,4 ... */
+#define FSL_FEATURE_DMAMUX_CHANNEL_NEEDS_ENDIAN_CONVERT (0)
 
 /* EWM module features */
 
@@ -164,6 +164,119 @@
 #define FSL_FEATURE_EWM_HAS_CLOCK_SELECT (1)
 /* @brief Has clock prescaler (register CLKPRESCALER). */
 #define FSL_FEATURE_EWM_HAS_PRESCALER (1)
+
+/* FTFA module features */
+
+/* @brief Is of type FTFA. */
+#define FSL_FEATURE_FTFA_TYPE (1)
+/* @brief Has flags indicating the status of the FlexRAM (register bits FCNFG[EEERDY], FCNFG[RAMRDY] and FCNFG[PFLSH]). */
+#define FSL_FEATURE_FTFA_HAS_FLEX_RAM_FLAGS (0)
+/* @brief Has program flash swapping status flag (register bit FCNFG[SWAP]). */
+#define FSL_FEATURE_FTFA_HAS_PFLASH_SWAPPING_STATUS_FLAG (0)
+/* @brief Has EEPROM region protection (register FEPROT). */
+#define FSL_FEATURE_FTFA_HAS_EEROM_REGION_PROTECTION (0)
+/* @brief Has data flash region protection (register FDPROT). */
+#define FSL_FEATURE_FTFA_HAS_DATA_FLASH_REGION_PROTECTION (0)
+/* @brief Has flash access control (registers XACCHn, SACCHn, where n is a number, FACSS and FACSN). */
+#define FSL_FEATURE_FTFA_HAS_ACCESS_CONTROL (0)
+/* @brief Has flash cache control in FMC module. */
+#define FSL_FEATURE_FTFA_HAS_FMC_FLASH_CACHE_CONTROLS (0)
+/* @brief Has flash cache control in MCM module. */
+#define FSL_FEATURE_FTFA_HAS_MCM_FLASH_CACHE_CONTROLS (1)
+/* @brief Has flash cache control in MSCM module. */
+#define FSL_FEATURE_FTFA_HAS_MSCM_FLASH_CACHE_CONTROLS (0)
+/* @brief Has prefetch speculation control in flash. */
+#define FSL_FEATURE_FTFA_HAS_PREFETCH_SPECULATION_CONTROL_IN_FLASH (0)
+/* @brief P-Flash flash size coding rule version, value 0 for K1 and K2, value 1 for K3. */
+#define FSL_FEATURE_FTFA_SIZE_ENCODING_RULE_VERSION (0)
+/* @brief P-Flash start address. */
+#define FSL_FEATURE_FTFA_PFLASH_START_ADDRESS (0x00000000)
+/* @brief P-Flash block count. */
+#define FSL_FEATURE_FTFA_PFLASH_BLOCK_COUNT (1)
+/* @brief P-Flash block size. */
+#define FSL_FEATURE_FTFA_PFLASH_BLOCK_SIZE (131072UL)
+/* @brief P-Flash sector size. */
+#define FSL_FEATURE_FTFA_PFLASH_BLOCK_SECTOR_SIZE (1024U)
+/* @brief P-Flash write unit size. */
+#define FSL_FEATURE_FTFA_PFLASH_BLOCK_WRITE_UNIT_SIZE (4)
+/* @brief P-Flash data path width. */
+#define FSL_FEATURE_FTFA_PFLASH_BLOCK_DATA_PATH_WIDTH (8)
+/* @brief P-Flash block swap feature. */
+#define FSL_FEATURE_FTFA_HAS_PFLASH_BLOCK_SWAP (0)
+/* @brief P-Flash protection region count. */
+#define FSL_FEATURE_FTFA_PFLASH_PROTECTION_REGION_COUNT (32)
+/* @brief Has FlexNVM memory. */
+#define FSL_FEATURE_FTFA_HAS_FLEX_NVM (0)
+/* @brief FlexNVM start address. (Valid only if FlexNVM is available.) */
+#define FSL_FEATURE_FTFA_FLEX_NVM_START_ADDRESS (0x00000000UL)
+/* @brief FlexNVM block count. */
+#define FSL_FEATURE_FTFA_FLEX_NVM_BLOCK_COUNT (0)
+/* @brief FlexNVM block size. */
+#define FSL_FEATURE_FTFA_FLEX_NVM_BLOCK_SIZE (0)
+/* @brief FlexNVM sector size. */
+#define FSL_FEATURE_FTFA_FLEX_NVM_BLOCK_SECTOR_SIZE (0)
+/* @brief FlexNVM write unit size. */
+#define FSL_FEATURE_FTFA_FLEX_NVM_BLOCK_WRITE_UNIT_SIZE (0)
+/* @brief FlexNVM data path width. */
+#define FSL_FEATURE_FTFA_FLEX_BLOCK_DATA_PATH_WIDTH (0)
+/* @brief Has FlexRAM memory. */
+#define FSL_FEATURE_FTFA_HAS_FLEX_RAM (0)
+/* @brief FlexRAM start address. (Valid only if FlexRAM is available.) */
+#define FSL_FEATURE_FTFA_FLEX_RAM_START_ADDRESS (0x00000000)
+/* @brief FlexRAM size. */
+#define FSL_FEATURE_FTFA_FLEX_RAM_SIZE (0)
+/* @brief Has 0x00 Read 1s Block command. */
+#define FSL_FEATURE_FTFA_HAS_READ_1S_BLOCK_CMD (1)
+/* @brief Has 0x01 Read 1s Section command. */
+#define FSL_FEATURE_FTFA_HAS_READ_1S_SECTION_CMD (1)
+/* @brief Has 0x02 Program Check command. */
+#define FSL_FEATURE_FTFA_HAS_PROGRAM_CHECK_CMD (1)
+/* @brief Has 0x03 Read Resource command. */
+#define FSL_FEATURE_FTFA_HAS_READ_RESOURCE_CMD (1)
+/* @brief Has 0x06 Program Longword command. */
+#define FSL_FEATURE_FTFA_HAS_PROGRAM_LONGWORD_CMD (1)
+/* @brief Has 0x07 Program Phrase command. */
+#define FSL_FEATURE_FTFA_HAS_PROGRAM_PHRASE_CMD (0)
+/* @brief Has 0x08 Erase Flash Block command. */
+#define FSL_FEATURE_FTFA_HAS_ERASE_FLASH_BLOCK_CMD (1)
+/* @brief Has 0x09 Erase Flash Sector command. */
+#define FSL_FEATURE_FTFA_HAS_ERASE_FLASH_SECTOR_CMD (1)
+/* @brief Has 0x0B Program Section command. */
+#define FSL_FEATURE_FTFA_HAS_PROGRAM_SECTION_CMD (0)
+/* @brief Has 0x40 Read 1s All Blocks command. */
+#define FSL_FEATURE_FTFA_HAS_READ_1S_ALL_BLOCKS_CMD (1)
+/* @brief Has 0x41 Read Once command. */
+#define FSL_FEATURE_FTFA_HAS_READ_ONCE_CMD (1)
+/* @brief Has 0x43 Program Once command. */
+#define FSL_FEATURE_FTFA_HAS_PROGRAM_ONCE_CMD (1)
+/* @brief Has 0x44 Erase All Blocks command. */
+#define FSL_FEATURE_FTFA_HAS_ERASE_ALL_BLOCKS_CMD (1)
+/* @brief Has 0x45 Verify Backdoor Access Key command. */
+#define FSL_FEATURE_FTFA_HAS_VERIFY_BACKDOOR_ACCESS_KEY_CMD (1)
+/* @brief Has 0x46 Swap Control command. */
+#define FSL_FEATURE_FTFA_HAS_SWAP_CONTROL_CMD (0)
+/* @brief Has 0x49 Erase All Blocks Unsecure command. */
+#define FSL_FEATURE_FTFA_HAS_ERASE_ALL_BLOCKS_UNSECURE_CMD (0)
+/* @brief Has 0x4A Read 1s All Execute-only Segments command. */
+#define FSL_FEATURE_FTFA_HAS_READ_1S_ALL_EXECUTE_ONLY_SEGMENTS_CMD (1)
+/* @brief Has 0x4B Erase All Execute-only Segments command. */
+#define FSL_FEATURE_FTFA_HAS_ERASE_ALL_EXECUTE_ONLY_SEGMENTS_CMD (1)
+/* @brief Has 0x80 Program Partition command. */
+#define FSL_FEATURE_FTFA_HAS_PROGRAM_PARTITION_CMD (0)
+/* @brief Has 0x81 Set FlexRAM Function command. */
+#define FSL_FEATURE_FTFA_HAS_SET_FLEXRAM_FUNCTION_CMD (0)
+/* @brief P-Flash Erase/Read 1st all block command address alignment. */
+#define FSL_FEATURE_FTFA_PFLASH_BLOCK_CMD_ADDRESS_ALIGMENT (4)
+/* @brief P-Flash Erase sector command address alignment. */
+#define FSL_FEATURE_FTFA_PFLASH_SECTOR_CMD_ADDRESS_ALIGMENT (8)
+/* @brief P-Flash Rrogram/Verify section command address alignment. */
+#define FSL_FEATURE_FTFA_PFLASH_SECTION_CMD_ADDRESS_ALIGMENT (8)
+/* @brief P-Flash Read resource command address alignment. */
+#define FSL_FEATURE_FTFA_PFLASH_RESOURCE_CMD_ADDRESS_ALIGMENT (4)
+/* @brief P-Flash Program check command address alignment. */
+#define FSL_FEATURE_FTFA_PFLASH_CHECK_CMD_ADDRESS_ALIGMENT (4)
+/* @brief P-Flash swap control command address alignment. */
+#define FSL_FEATURE_FTFA_PFLASH_SWAP_CONTROL_CMD_ADDRESS_ALIGMENT (0)
 
 /* LPI2C module features */
 
@@ -361,3 +474,4 @@
 #define FSL_FEATURE_XBARA_INTERRUPT_COUNT (4)
 
 #endif /* _MC56F81666_FEATURES_H_ */
+

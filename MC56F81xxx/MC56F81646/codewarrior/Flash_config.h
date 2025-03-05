@@ -45,7 +45,11 @@
 
 /************************** Flash configuration field *********************/
 
-#define FCF_BACKDOOR_KEY0          0xFFU
+/*
+ * Avoid to set BACKDOOR KEY all 1s or 0s, otherwise no way back to
+ * OEM_OPEN in case enter OEM_CLOSE ROP1/2 by accident.
+ */
+#define FCF_BACKDOOR_KEY0          0xA8U
 #define FCF_BACKDOOR_KEY1          0xFFU
 #define FCF_BACKDOOR_KEY2          0xFFU
 #define FCF_BACKDOOR_KEY3          0xFFU

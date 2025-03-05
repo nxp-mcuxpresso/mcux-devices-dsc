@@ -8,12 +8,6 @@ if (CONFIG_MCUX_COMPONENT_driver.clock)
     mcux_add_include( INCLUDES . )
 endif()
 
-if (CONFIG_MCUX_COMPONENT_driver.dsc_flash_romapi)
-    mcux_component_version(3.3.0)
-    mcux_add_source( SOURCES fsl_flash.c fsl_flash.h )
-    mcux_add_include( INCLUDES . )
-endif()
-
 if (CONFIG_MCUX_COMPONENT_driver.dsc_sim_mc56f81xxx)
     mcux_component_version(2.2.0)
     mcux_add_source( SOURCES fsl_sim.h )

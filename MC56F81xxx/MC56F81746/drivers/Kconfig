@@ -2,19 +2,11 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-config MCUX_HAS_COMPONENT_driver.dsc_flash_romapi
-  bool
-  default y
-
 menu "Device specific drivers configuration"
 
     config MCUX_COMPONENT_driver.clock
          bool "clock"
          default y
-
-    config MCUX_COMPONENT_driver.dsc_flash_romapi
-         bool "flash"
-         default y if MCUX_HAS_COMPONENT_driver.dsc_flash_romapi
 
     config MCUX_COMPONENT_driver.dsc_sim_mc56f81xxx
          bool "sim"
