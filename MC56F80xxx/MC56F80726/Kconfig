@@ -13,7 +13,3 @@ config MCUX_HW_DEVICE_MC56F80726
     bool
     default y
 
-    # component dependency
-    select MCUX_COMPONENT_driver.dsc_edma if MCUX_COMPONENT_driver.dsc_i2c_edma
-    select MCUX_COMPONENT_driver.dsc_edma if MCUX_COMPONENT_driver.qsci_edma
-    select MCUX_COMPONENT_component.qsci_adapter if MCUX_COMPONENT_utility.debug_console_lite

@@ -6,6 +6,10 @@ config MCUX_HAS_COMPONENT_driver.dsc_flash_romapi
   bool
   default y
 
+config MCUX_HAS_COMPONENT_driver.dsc_device_sim
+  bool
+  default y
+
 menu "Device specific drivers configuration"
 
     config MCUX_COMPONENT_driver.clock
@@ -16,7 +20,7 @@ menu "Device specific drivers configuration"
          bool "flash"
          default y if MCUX_HAS_COMPONENT_driver.dsc_flash_romapi
 
-    config MCUX_COMPONENT_driver.dsc_sim_mc56f83xxx
+    config MCUX_COMPONENT_driver.dsc_device_sim
          bool "sim"
          default y
 

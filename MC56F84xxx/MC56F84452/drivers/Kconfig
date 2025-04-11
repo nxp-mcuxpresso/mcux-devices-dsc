@@ -1,11 +1,7 @@
-# Copyright 2024 NXP
+# Copyright 2024-2025 NXP
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-menu "Device specific drivers configuration"
 
-    config MCUX_COMPONENT_driver.clock
-         bool "clock"
-         default y
 
-endmenu
+rsource "../../../MC56F84xxx/MC56F84789/drivers/Kconfig"

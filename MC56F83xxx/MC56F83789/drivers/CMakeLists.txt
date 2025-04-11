@@ -14,7 +14,7 @@ if (CONFIG_MCUX_COMPONENT_driver.dsc_flash_romapi)
     mcux_add_include( INCLUDES . )
 endif()
 
-if (CONFIG_MCUX_COMPONENT_driver.dsc_sim_mc56f83xxx)
+if (CONFIG_MCUX_COMPONENT_driver.dsc_device_sim)
     mcux_component_version(2.2.0)
     mcux_add_source( SOURCES fsl_sim.h )
     mcux_add_include( INCLUDES . )

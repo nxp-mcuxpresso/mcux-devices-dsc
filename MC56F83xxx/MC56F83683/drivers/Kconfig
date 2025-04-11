@@ -1,23 +1,7 @@
-# Copyright 2024 NXP
+# Copyright 2024-2025 NXP
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-config MCUX_HAS_COMPONENT_driver.dsc_flash_romapi
-  bool
-  default y
 
-menu "Device specific drivers configuration"
 
-    config MCUX_COMPONENT_driver.clock
-         bool "clock"
-         default y
-
-    config MCUX_COMPONENT_driver.dsc_flash_romapi
-         bool "flash"
-         default y if MCUX_HAS_COMPONENT_driver.dsc_flash_romapi
-
-    config MCUX_COMPONENT_driver.dsc_sim_mc56f83xxx
-         bool "sim"
-         default y
-
-endmenu
+rsource "../../../MC56F83xxx/MC56F83789/drivers/Kconfig"

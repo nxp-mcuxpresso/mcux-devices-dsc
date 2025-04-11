@@ -2,13 +2,17 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
+config MCUX_HAS_COMPONENT_driver.dsc_device_sim
+  bool
+  default y
+
 menu "Device specific drivers configuration"
 
     config MCUX_COMPONENT_driver.clock
          bool "clock"
          default y
 
-    config MCUX_COMPONENT_driver.dsc_sim_mc56f80xxx
+    config MCUX_COMPONENT_driver.dsc_device_sim
          bool "sim"
          default y
 

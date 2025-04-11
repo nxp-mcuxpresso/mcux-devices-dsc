@@ -70,10 +70,6 @@ config MCUX_TOOLCHAIN_LINKER_DEVICE_PREFIX
 
 # Toolchain related
 
-config MCUX_TOOLCHAIN_JLINK_CPU_IDENTIFIER
-    string
-    default "MC56F82623" if MCUX_HW_DEVICE_ID_MC56F82623
-
 config MCUX_TOOLCHAIN_CODEWARRIOR_CPU_IDENTIFIER
     string
     default "MC56F826xx" if MCUX_HW_DEVICE_ID_MC56F82623
@@ -183,3 +179,4 @@ config MCUX_HW_IP_DriverType_QSCI
     bool
     default y
     depends on MCUX_HW_DEVICE_ID_MC56F82623
+

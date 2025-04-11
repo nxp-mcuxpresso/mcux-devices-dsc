@@ -10,5 +10,3 @@ mcux_set_variable(soc_series MC56F83xxx)
 mcux_set_variable(soc_periph periph)
 mcux_set_variable(core_id_suffix_name "")
 mcux_set_variable(multicore_foldername .)
-
-#### Source record
