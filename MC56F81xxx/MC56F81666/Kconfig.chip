@@ -160,10 +160,10 @@ config MCUX_HW_IP_DriverType_DSC_QDC
     default y
     depends on MCUX_HW_DEVICE_ID_MC56F81666
 
-#config MCUX_HW_IP_DriverType_DSC_SIM
-#    bool
-#    default y
-#    depends on MCUX_HW_DEVICE_ID_MC56F81666
+config MCUX_HW_IP_DriverType_DSC_SIM
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F81666
 
 config MCUX_HW_IP_DriverType_DSC_TMR
     bool

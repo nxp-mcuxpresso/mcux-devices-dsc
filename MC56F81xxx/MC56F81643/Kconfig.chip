@@ -155,10 +155,10 @@ config MCUX_HW_IP_DriverType_DSC_PWM
     default y
     depends on MCUX_HW_DEVICE_ID_MC56F81643
 
-#config MCUX_HW_IP_DriverType_DSC_SIM
-#    bool
-#    default y
-#    depends on MCUX_HW_DEVICE_ID_MC56F81643
+config MCUX_HW_IP_DriverType_DSC_SIM
+    bool
+    default y
+    depends on MCUX_HW_DEVICE_ID_MC56F81643
 
 config MCUX_HW_IP_DriverType_DSC_TMR
     bool
