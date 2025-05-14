@@ -11,11 +11,11 @@ target_initialization_file:
       toolchains: codewarrior
       attribute: target_initialization_file
       project_path: "${device}/codewarrior"
-      package_path: project-root-path/codewarrior
+      package_path: project-root-path
 memory_config_file:
   files:
     - source: ${device_root}/${soc_portfolio}/${soc_series}/${device}/codewarrior/${device}.mem
       toolchains: codewarrior
       attribute: memory_config_file
       project_path: "${device}/codewarrior"
-      package_path: project-root-path/codewarrior
+      package_path: project-root-path
