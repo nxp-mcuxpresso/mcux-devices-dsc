@@ -23,14 +23,14 @@
 **                          MC56F81868AMLHA
 **                          MC56F81868LVLH
 **
-**     Version:             rev. 0.1, 2019-12-10
-**     Build:               b240709
+**     Version:             rev. 1.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for MCM
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -39,21 +39,24 @@
 **     Revisions:
 **     - rev. 0.1 (2019-12-10)
 **         Initial version.
+**     - rev. 1.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file MCM.h
- * @version 0.1
- * @date 2019-12-10
+ * @file PERI_MCM.h
+ * @version 1.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for MCM
  *
  * CMSIS Peripheral Access Layer for MCM
  */
 
-#if !defined(MCM_H_)
-#define MCM_H_                                   /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_MCM_H_)
+#define PERI_MCM_H_                              /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F81643LVLC))
 #include "MC56F81643_COMMON.h"
@@ -455,5 +458,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* MCM_H_ */
+#endif  /* PERI_MCM_H_ */
 

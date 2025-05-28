@@ -3,14 +3,14 @@
 **     Processor:           MC56F84565VLK
 **     Compiler:            CodeWarrior C/C++ for DSP M56800E
 **     Reference manual:    Manual version TBD
-**     Version:             rev. 2.0, 2021-02-06
-**     Build:               b240709
+**     Version:             rev. 3.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         Peripheral Access Layer for MC56F84565
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -19,14 +19,17 @@
 **     Revisions:
 **     - rev. 2.0 (2021-02-06)
 **         Initial version.
+**     - rev. 3.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
  * @file MC56F84565.h
- * @version 2.0
- * @date 2021-02-06
+ * @version 3.0
+ * @date 2024-10-29
  * @brief Peripheral Access Layer for MC56F84565
  *
  * Peripheral Access Layer for MC56F84565

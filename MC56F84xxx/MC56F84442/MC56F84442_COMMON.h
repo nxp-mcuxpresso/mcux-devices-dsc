@@ -3,14 +3,14 @@
 **     Processor:           MC56F84442VLH
 **     Compiler:            CodeWarrior C/C++ for DSP M56800E
 **     Reference manual:    Manual version TBD
-**     Version:             rev. 2.0, 2021-02-06
-**     Build:               b240709
+**     Version:             rev. 3.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         Peripheral Access Layer for MC56F84442
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -19,14 +19,17 @@
 **     Revisions:
 **     - rev. 2.0 (2021-02-06)
 **         Initial version.
+**     - rev. 3.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
  * @file MC56F84442_COMMON.h
- * @version 2.0
- * @date 2021-02-06
+ * @version 3.0
+ * @date 2024-10-29
  * @brief Peripheral Access Layer for MC56F84442
  *
  * Peripheral Access Layer for MC56F84442
@@ -35,11 +38,9 @@
 #if !defined(MC56F84442_COMMON_H_)
 #define MC56F84442_COMMON_H_                     /**< Symbol preventing repeated inclusion */
 
-#include "MC56F84442_features.h"
-
 /** Memory map major version (memory maps with equal major version number are
  * compatible) */
-#define MCU_MEM_MAP_VERSION 0x0200U
+#define MCU_MEM_MAP_VERSION 0x0300U
 /** Memory map minor version */
 #define MCU_MEM_MAP_VERSION_MINOR 0x0000U
 
@@ -191,6 +192,12 @@ typedef enum IRQn {
  * @}
  */ /* end of group Includes_And_Typedes */
 
+
+#ifndef MC56F84442_SERIES
+#define MC56F84442_SERIES
+#endif
+/* CPU specific feature definitions */
+#include "MC56F84442_features.h"
 
 /* ADC - Peripheral instance base addresses */
 /** Peripheral ADC base address */

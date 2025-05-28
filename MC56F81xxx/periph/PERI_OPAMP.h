@@ -23,14 +23,14 @@
 **                          MC56F81868AMLHA
 **                          MC56F81868LVLH
 **
-**     Version:             rev. 0.1, 2019-12-10
-**     Build:               b240709
+**     Version:             rev. 1.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for OPAMP
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -39,21 +39,24 @@
 **     Revisions:
 **     - rev. 0.1 (2019-12-10)
 **         Initial version.
+**     - rev. 1.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file OPAMP.h
- * @version 0.1
- * @date 2019-12-10
+ * @file PERI_OPAMP.h
+ * @version 1.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for OPAMP
  *
  * CMSIS Peripheral Access Layer for OPAMP
  */
 
-#if !defined(OPAMP_H_)
-#define OPAMP_H_                                 /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_OPAMP_H_)
+#define PERI_OPAMP_H_                            /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F81643LVLC))
 #include "MC56F81643_COMMON.h"
@@ -215,8 +218,8 @@ typedef struct {
 #define OPAMP_CTRL_LDCMIE_MASK                   (0x8000U)
 #define OPAMP_CTRL_LDCMIE_SHIFT                  (15U)
 /*! LDCMIE - Load Completion Interrupt Enable
- *  0b1..Enables
  *  0b0..Disables
+ *  0b1..Enables
  */
 #define OPAMP_CTRL_LDCMIE(x)                     (((uint16_t)(((uint16_t)(x)) << OPAMP_CTRL_LDCMIE_SHIFT)) & OPAMP_CTRL_LDCMIE_MASK)
 /*! @} */
@@ -246,18 +249,18 @@ typedef struct {
 #define OPAMP_CFG_GAIN_EN_MASK                   (0x1U)
 #define OPAMP_CFG_GAIN_EN_SHIFT                  (0U)
 /*! GAIN_EN - Gain Enable
- *  0b1..Internal gain is enabled.
  *  0b0..Internal gain is disabled.
+ *  0b1..Internal gain is enabled.
  */
 #define OPAMP_CFG_GAIN_EN(x)                     (((uint16_t)(((uint16_t)(x)) << OPAMP_CFG_GAIN_EN_SHIFT)) & OPAMP_CFG_GAIN_EN_MASK)
 
 #define OPAMP_CFG_GAIN_SEL_MASK                  (0x6U)
 #define OPAMP_CFG_GAIN_SEL_SHIFT                 (1U)
 /*! GAIN_SEL - Gain Selection
- *  0b11..Gain value 16X.
+ *  0b00..Gain value 2X.
  *  0b01..Gain value 4X.
  *  0b10..Gain value 8X.
- *  0b00..Gain value 2X.
+ *  0b11..Gain value 16X.
  */
 #define OPAMP_CFG_GAIN_SEL(x)                    (((uint16_t)(((uint16_t)(x)) << OPAMP_CFG_GAIN_SEL_SHIFT)) & OPAMP_CFG_GAIN_SEL_MASK)
 
@@ -269,20 +272,20 @@ typedef struct {
 #define OPAMP_CFG_VNEG_SEL_MASK                  (0x30U)
 #define OPAMP_CFG_VNEG_SEL_SHIFT                 (4U)
 /*! VNEG_SEL - VNEGx Selection
- *  0b11..Selects VNEG3.
+ *  0b00..Selects VNEG0.
  *  0b01..Selects VNEG1.
  *  0b10..Selects VNEG2.
- *  0b00..Selects VNEG0.
+ *  0b11..Selects VNEG3.
  */
 #define OPAMP_CFG_VNEG_SEL(x)                    (((uint16_t)(((uint16_t)(x)) << OPAMP_CFG_VNEG_SEL_SHIFT)) & OPAMP_CFG_VNEG_SEL_MASK)
 
 #define OPAMP_CFG_VPOS_SEL_MASK                  (0xC0U)
 #define OPAMP_CFG_VPOS_SEL_SHIFT                 (6U)
 /*! VPOS_SEL - VPOS Selection
- *  0b11..Selects VPOS3.
+ *  0b00..Selects VPOS0.
  *  0b01..Selects VPOS1.
  *  0b10..Selects VPOS2.
- *  0b00..Selects VPOS0.
+ *  0b11..Selects VPOS3.
  */
 #define OPAMP_CFG_VPOS_SEL(x)                    (((uint16_t)(((uint16_t)(x)) << OPAMP_CFG_VPOS_SEL_SHIFT)) & OPAMP_CFG_VPOS_SEL_MASK)
 /*! @} */
@@ -316,5 +319,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* OPAMP_H_ */
+#endif  /* PERI_OPAMP_H_ */
 

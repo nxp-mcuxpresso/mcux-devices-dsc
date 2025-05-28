@@ -15,14 +15,14 @@
 **                          MC56F83789AVLL
 **                          MC56F83789VLL
 **
-**     Version:             rev. 0.1, 2019-09-23
-**     Build:               b240709
+**     Version:             rev. 1.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for DMAMUX
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -31,21 +31,24 @@
 **     Revisions:
 **     - rev. 0.1 (2019-09-23)
 **         Initial version.
+**     - rev. 1.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file DMAMUX.h
- * @version 0.1
- * @date 2019-09-23
+ * @file PERI_DMAMUX.h
+ * @version 1.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for DMAMUX
  *
  * CMSIS Peripheral Access Layer for DMAMUX
  */
 
-#if !defined(DMAMUX_H_)
-#define DMAMUX_H_                                /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_DMAMUX_H_)
+#define PERI_DMAMUX_H_                           /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F83663VLH))
 #include "MC56F83663_COMMON.h"
@@ -259,5 +262,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* DMAMUX_H_ */
+#endif  /* PERI_DMAMUX_H_ */
 

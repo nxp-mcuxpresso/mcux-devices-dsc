@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2022-01-28
-**     Build:               b230724
+**     Build:               b230919
 **
 **     Abstract:
 **         Chip specific module features.
@@ -126,15 +126,11 @@
 
 /* EDMA module features */
 
-/* @brief Number of DMA channels (related to number of registers TCD, DCHPRI, bit fields ERQ[ERQn], EEI[EEIn],
- * INT[INTn], ERR[ERRn], HRS[HRSn] and bit field widths ES[ERRCHN], CEEI[CEEI], SEEI[SEEI], CERQ[CERQ], SERQ[SERQ],
- * CDNE[CDNE], SSRT[SSRT], CERR[CERR], CINT[CINT], TCDn_CITER_ELINKYES[LINKCH], TCDn_CSR[MAJORLINKCH],
- * TCDn_BITER_ELINKYES[LINKCH]). (Valid only for eDMA modules.) */
+/* @brief Number of DMA channels (related to number of registers TCD, DCHPRI, bit fields ERQ[ERQn], EEI[EEIn], INT[INTn], ERR[ERRn], HRS[HRSn] and bit field widths ES[ERRCHN], CEEI[CEEI], SEEI[SEEI], CERQ[CERQ], SERQ[SERQ], CDNE[CDNE], SSRT[SSRT], CERR[CERR], CINT[CINT], TCDn_CITER_ELINKYES[LINKCH], TCDn_CSR[MAJORLINKCH], TCDn_BITER_ELINKYES[LINKCH]). (Valid only for eDMA modules.) */
 #define FSL_FEATURE_EDMA_MODULE_CHANNEL (4)
 /* @brief Total number of DMA channels on all modules. */
 #define FSL_FEATURE_EDMA_DMAMUX_CHANNELS (4)
-/* @brief Number of DMA channel groups (register bit fields CR[ERGA], CR[GRPnPRI], ES[GPE], DCHPRIn[GRPPRI]). (Valid
- * only for eDMA modules.) */
+/* @brief Number of DMA channel groups (register bit fields CR[ERGA], CR[GRPnPRI], ES[GPE], DCHPRIn[GRPPRI]). (Valid only for eDMA modules.) */
 #define FSL_FEATURE_EDMA_CHANNEL_GROUP_COUNT (1)
 /* @brief Has DMA_Error interrupt vector. */
 #define FSL_FEATURE_EDMA_HAS_ERROR_IRQ (1)
@@ -198,8 +194,7 @@
 
 /* @brief Is of type FTFA. */
 #define FSL_FEATURE_FTFA_TYPE (1)
-/* @brief Has flags indicating the status of the FlexRAM (register bits FCNFG[EEERDY], FCNFG[RAMRDY] and FCNFG[PFLSH]).
- */
+/* @brief Has flags indicating the status of the FlexRAM (register bits FCNFG[EEERDY], FCNFG[RAMRDY] and FCNFG[PFLSH]). */
 #define FSL_FEATURE_FTFA_HAS_FLEX_RAM_FLAGS (0)
 /* @brief Has program flash swapping status flag (register bit FCNFG[SWAP]). */
 #define FSL_FEATURE_FTFA_HAS_PFLASH_SWAPPING_STATUS_FLAG (0)
@@ -373,7 +368,7 @@
 /* @brief If (e)FlexPWM has mux trigger source select bit field. */
 #define FSL_FEATURE_PWM_HAS_MUX_TRIGGER_SOURCE_SEL (0)
 /* @brief Number of submodules in each (e)FlexPWM module. */
-#define FSL_FEATURE_PWM_SUBMODULE_COUNT (4U)
+#define FSL_FEATURE_PWM_SUBMODULE_COUNT (4)
 /* @brief Number of fault channel in each (e)FlexPWM module. */
 #define FSL_FEATURE_PWM_FAULT_CH_COUNT (2)
 /* @brief If (e)FlexPWM has phase delay register. */
@@ -393,7 +388,7 @@
 /* @brief If (e)FlexPWM has FCTRL2 register. */
 #define FSL_FEATURE_PWM_HAS_FCTRL2_REGISTER (1)
 /* @brief Bitwidth of DTCNTx in (e)FlexPWM module. */
-#define FSL_FEATURE_PWM_NUM_BITWIDTH_DTCNT (16U)
+#define FSL_FEATURE_PWM_NUM_BITWIDTH_DTCNT (16)
 /* @brief If (e)FlexPWM has Capture Input Filter Register */
 #define FSL_FEATURE_PWM_HAS_CAPTFILT_REGISTER (0)
 
@@ -471,3 +466,4 @@
 #define FSL_FEATURE_XBARA_INTERRUPT_COUNT (4)
 
 #endif /* _MC56F80738_FEATURES_H_ */
+

@@ -23,14 +23,14 @@
 **                          MC56F81868AMLHA
 **                          MC56F81868LVLH
 **
-**     Version:             rev. 0.1, 2019-12-10
-**     Build:               b240709
+**     Version:             rev. 1.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for EWM
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -39,21 +39,24 @@
 **     Revisions:
 **     - rev. 0.1 (2019-12-10)
 **         Initial version.
+**     - rev. 1.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file EWM.h
- * @version 0.1
- * @date 2019-12-10
+ * @file PERI_EWM.h
+ * @version 1.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for EWM
  *
  * CMSIS Peripheral Access Layer for EWM
  */
 
-#if !defined(EWM_H_)
-#define EWM_H_                                   /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_EWM_H_)
+#define PERI_EWM_H_                              /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F81643LVLC))
 #include "MC56F81643_COMMON.h"
@@ -120,7 +123,7 @@
 /** EWM - Register Layout Typedef */
 typedef struct {
   __IO uint16_t CTRL;                              /**< Control Register, offset: 0x0 */
-  __O  uint16_t SERV;                              /**< Service Register, offset: 0x1 */
+  __IO uint16_t SERV;                              /**< Service Register, offset: 0x1 */
   __IO uint16_t CMPL;                              /**< Compare Low Register, offset: 0x2 */
   __IO uint16_t CMPH;                              /**< Compare High Register, offset: 0x3 */
   __IO uint16_t CLKCTRL;                           /**< Clock Control Register, offset: 0x4 */
@@ -232,5 +235,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* EWM_H_ */
+#endif  /* PERI_EWM_H_ */
 

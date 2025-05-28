@@ -23,14 +23,14 @@
 **                          MC56F81868AMLHA
 **                          MC56F81868LVLH
 **
-**     Version:             rev. 0.1, 2019-12-10
-**     Build:               b240709
+**     Version:             rev. 1.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for EVTG
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -39,21 +39,24 @@
 **     Revisions:
 **     - rev. 0.1 (2019-12-10)
 **         Initial version.
+**     - rev. 1.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file EVTG.h
- * @version 0.1
- * @date 2019-12-10
+ * @file PERI_EVTG.h
+ * @version 1.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for EVTG
  *
  * CMSIS Peripheral Access Layer for EVTG
  */
 
-#if !defined(EVTG_H_)
-#define EVTG_H_                                  /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_EVTG_H_)
+#define PERI_EVTG_H_                             /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F81643LVLC))
 #include "MC56F81643_COMMON.h"
@@ -537,24 +540,24 @@ typedef struct {
 #define EVTG_EVTG_CTRL_SYNC_CTRL_MASK            (0xF00U)
 #define EVTG_EVTG_CTRL_SYNC_CTRL_SHIFT           (8U)
 /*! SYNC_CTRL - Four EVTG inputs synchronous with bus clk
- *  0bxxx1..EVTG input "An" will be synced by two bus clk cycles.
- *  0bxxx0..EVTG input "An" will not be synced.
- *  0bxx1x..EVTG input "Bn" will be synced by two bus clk cycles.
- *  0bxx0x..EVTG input "Bn" will not be synced.
- *  0bx1xx..EVTG input "Cn" will be synced by two bus clk cycles.
- *  0bx0xx..EVTG input "Cn" will not be synced.
- *  0b1xxx..EVTG input "Dn" will be synced by two bus clk cycles.
  *  0b0xxx..EVTG input "Dn" will not be synced.
+ *  0b1xxx..EVTG input "Dn" will be synced by two bus clk cycles.
+ *  0bx0xx..EVTG input "Cn" will not be synced.
+ *  0bx1xx..EVTG input "Cn" will be synced by two bus clk cycles.
+ *  0bxx0x..EVTG input "Bn" will not be synced.
+ *  0bxx1x..EVTG input "Bn" will be synced by two bus clk cycles.
+ *  0bxxx0..EVTG input "An" will not be synced.
+ *  0bxxx1..EVTG input "An" will be synced by two bus clk cycles.
  */
 #define EVTG_EVTG_CTRL_SYNC_CTRL(x)              (((uint16_t)(((uint16_t)(x)) << EVTG_EVTG_CTRL_SYNC_CTRL_SHIFT)) & EVTG_EVTG_CTRL_SYNC_CTRL_MASK)
 
 #define EVTG_EVTG_CTRL_FORCE_BYPASS_MASK         (0x3000U)
 #define EVTG_EVTG_CTRL_FORCE_BYPASS_SHIFT        (12U)
 /*! FORCE_BYPASS - Force Bypass Control
- *  0bx1..Whatever "MODE_SEL" is, will force bypass Flip-Flop and route the AOI_0(Filter_0) value directly to EVTG_OUTA
- *  0bx0..Will not force the bypass
- *  0b1x..Whatever "MODE_SEL" is, will force bypass Flip-Flop and route the AOI_1(Filter_1) value directly to EVTG_OUTB
  *  0b0x..Will not force the bypass
+ *  0b1x..Whatever "MODE_SEL" is, will force bypass Flip-Flop and route the AOI_1(Filter_1) value directly to EVTG_OUTB
+ *  0bx0..Will not force the bypass
+ *  0bx1..Whatever "MODE_SEL" is, will force bypass Flip-Flop and route the AOI_0(Filter_0) value directly to EVTG_OUTA
  */
 #define EVTG_EVTG_CTRL_FORCE_BYPASS(x)           (((uint16_t)(((uint16_t)(x)) << EVTG_EVTG_CTRL_FORCE_BYPASS_SHIFT)) & EVTG_EVTG_CTRL_FORCE_BYPASS_MASK)
 /*! @} */
@@ -622,5 +625,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* EVTG_H_ */
+#endif  /* PERI_EVTG_H_ */
 

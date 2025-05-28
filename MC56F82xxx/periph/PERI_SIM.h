@@ -22,14 +22,14 @@
 **                          MC56F82748MLH
 **                          MC56F82748VLH
 **
-**     Version:             rev. 0.1, 2020-12-11
-**     Build:               b240709
+**     Version:             rev. 1.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for SIM
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -38,21 +38,24 @@
 **     Revisions:
 **     - rev. 0.1 (2020-12-11)
 **         Initial version.
+**     - rev. 1.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file SIM.h
- * @version 0.1
- * @date 2020-12-11
+ * @file PERI_SIM.h
+ * @version 1.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for SIM
  *
  * CMSIS Peripheral Access Layer for SIM
  */
 
-#if !defined(SIM_H_)
-#define SIM_H_                                   /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_SIM_H_)
+#define PERI_SIM_H_                              /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F82313VLC))
 #include "MC56F82313_COMMON.h"
@@ -117,96 +120,96 @@
  */
 typedef enum _gpio_peripheral_mux
 {
-    kGPIO_Peri_C2_TXD0              = 0x0220,      /**< GPIO_C2, Pin No.  */
-    kGPIO_Peri_C2_XB_OUT11          = 0x0221,      /**< GPIO_C2, Pin No.  */
-    kGPIO_Peri_C2_XB_IN2            = 0x0222,      /**< GPIO_C2, Pin No.  */
-    kGPIO_Peri_C2_CLKO0             = 0x0223,      /**< GPIO_C2, Pin No.  */
-    kGPIO_Peri_C3_TA0               = 0x0230,      /**< GPIO_C3, Pin No.  */
-    kGPIO_Peri_C3_CMPA_O            = 0x0231,      /**< GPIO_C3, Pin No.  */
-    kGPIO_Peri_C3_RXD0              = 0x0232,      /**< GPIO_C3, Pin No.  */
-    kGPIO_Peri_C3_CLKIN1            = 0x0233,      /**< GPIO_C3, Pin No.  */
-    kGPIO_Peri_C4_TA1               = 0x0240,      /**< GPIO_C4, Pin No.  */
-    kGPIO_Peri_C4_CMPB_O            = 0x0241,      /**< GPIO_C4, Pin No.  */
-    kGPIO_Peri_C4_XB_IN6            = 0x0242,      /**< GPIO_C4, Pin No.  */
-    kGPIO_Peri_C4_EWM_OUT_B         = 0x0243,      /**< GPIO_C4, Pin No.  */
-    kGPIO_Peri_C6_TA2               = 0x0260,      /**< GPIO_C6, Pin No.  */
-    kGPIO_Peri_C6_XB_IN3            = 0x0261,      /**< GPIO_C6, Pin No.  */
-    kGPIO_Peri_C6_CMP_REF           = 0x0262,      /**< GPIO_C6, Pin No.  */
-    kGPIO_Peri_C6_SS0_B             = 0x0263,      /**< GPIO_C6, Pin No.  */
-    kGPIO_Peri_C8_MISO0             = 0x0280,      /**< GPIO_C8, Pin No.  */
-    kGPIO_Peri_C8_RXD0              = 0x0281,      /**< GPIO_C8, Pin No.  */
-    kGPIO_Peri_C8_XB_IN9            = 0x0282,      /**< GPIO_C8, Pin No.  */
-    kGPIO_Peri_C8_XB_OUT6           = 0x0283,      /**< GPIO_C8, Pin No.  */
-    kGPIO_Peri_C9_SCLK0             = 0x0290,      /**< GPIO_C9, Pin No.  */
-    kGPIO_Peri_C9_XB_IN4            = 0x0291,      /**< GPIO_C9, Pin No.  */
-    kGPIO_Peri_C9_TXD0              = 0x0292,      /**< GPIO_C9, Pin No.  */
-    kGPIO_Peri_C9_XB_OUT8           = 0x0293,      /**< GPIO_C9, Pin No.  */
-    kGPIO_Peri_C10_MOSI0            = 0x02A0,      /**< GPIO_C10, Pin No.  */
-    kGPIO_Peri_C10_XB_IN5           = 0x02A1,      /**< GPIO_C10, Pin No.  */
-    kGPIO_Peri_C10_MISO0            = 0x02A2,      /**< GPIO_C10, Pin No.  */
-    kGPIO_Peri_C10_XB_OUT9          = 0x02A3,      /**< GPIO_C10, Pin No.  */
-    kGPIO_Peri_E4_PWM_2B            = 0x0440,      /**< GPIO_E4, Pin No.  */
-    kGPIO_Peri_E4_XB_IN2            = 0x0441,      /**< GPIO_E4, Pin No.  */
-    kGPIO_Peri_E5_PWM_2A            = 0x0450,      /**< GPIO_E5, Pin No.  */
-    kGPIO_Peri_E5_XB_IN3            = 0x0451,      /**< GPIO_E5, Pin No.  */
-    kGPIO_Peri_F2_SCL0              = 0x0520,      /**< GPIO_F2, Pin No.  */
-    kGPIO_Peri_F2_XB_OUT6           = 0x0521,      /**< GPIO_F2, Pin No.  */
-    kGPIO_Peri_F3_SDA0              = 0x0530,      /**< GPIO_F3, Pin No.  */
-    kGPIO_Peri_F3_XB_OUT7           = 0x0531,      /**< GPIO_F3, Pin No.  */
-    kGPIO_Peri_A0_ANA0_and_CMPA_IN3 = 0x0000,      /**< GPIO_A0, Pin No.  */
-    kGPIO_Peri_A0_CMPC_O            = 0x0001,      /**< GPIO_A0, Pin No.  */
-    kGPIO_Peri_B1_ANB1_and_CMPB_IN0 = 0x0110,      /**< GPIO_B1, Pin No.  */
-    kGPIO_Peri_B1_DACB_O            = 0x0111,      /**< GPIO_B1, Pin No.  */
-    kGPIO_Peri_C0_EXTAL             = 0x0200,      /**< GPIO_C0, Pin No.  */
-    kGPIO_Peri_C0_CLKIN0            = 0x0201,      /**< GPIO_C0, Pin No.  */
-    kGPIO_Peri_C5_DACA_O            = 0x0250,      /**< GPIO_C5, Pin No.  */
-    kGPIO_Peri_C5_XB_IN7            = 0x0251,      /**< GPIO_C5, Pin No.  */
-    kGPIO_Peri_C7_SS0_B             = 0x0270,      /**< GPIO_C7, Pin No.  */
-    kGPIO_Peri_C7_TXD0              = 0x0271,      /**< GPIO_C7, Pin No.  */
-    kGPIO_Peri_C7_XB_IN8            = 0x0272,      /**< GPIO_C7, Pin No.  */
-    kGPIO_Peri_C11_SCL0             = 0x02B1,      /**< GPIO_C11, Pin No.  */
-    kGPIO_Peri_C11_TXD1             = 0x02B2,      /**< GPIO_C11, Pin No.  */
-    kGPIO_Peri_C12_SDA0             = 0x02C1,      /**< GPIO_C12, Pin No.  */
-    kGPIO_Peri_C12_RXD1             = 0x02C2,      /**< GPIO_C12, Pin No.  */
-    kGPIO_Peri_C13_TA3              = 0x02D0,      /**< GPIO_C13, Pin No.  */
-    kGPIO_Peri_C13_XB_IN6           = 0x02D1,      /**< GPIO_C13, Pin No.  */
-    kGPIO_Peri_C13_EWM_OUT_B        = 0x02D2,      /**< GPIO_C13, Pin No.  */
-    kGPIO_Peri_C14_SDA0             = 0x02E0,      /**< GPIO_C14, Pin No.  */
-    kGPIO_Peri_C14_XB_OUT4          = 0x02E1,      /**< GPIO_C14, Pin No.  */
-    kGPIO_Peri_C14_PWM_FAULT4       = 0x02E2,      /**< GPIO_C14, Pin No.  */
-    kGPIO_Peri_C15_SCL0             = 0x02F0,      /**< GPIO_C15, Pin No.  */
-    kGPIO_Peri_C15_XB_OUT5          = 0x02F1,      /**< GPIO_C15, Pin No.  */
-    kGPIO_Peri_C15_PWM_FAULT5       = 0x02F2,      /**< GPIO_C15, Pin No.  */
-    kGPIO_Peri_F1_CLKO1             = 0x0510,      /**< GPIO_F1, Pin No.  */
-    kGPIO_Peri_F1_XB_IN7            = 0x0511,      /**< GPIO_F1, Pin No.  */
-    kGPIO_Peri_F1_CMPD_O            = 0x0512,      /**< GPIO_F1, Pin No.  */
-    kGPIO_Peri_C11_CANTX            = 0x02B0,      /**< GPIO_C11, Pin No.  */
-    kGPIO_Peri_C12_CANRX            = 0x02C0,      /**< GPIO_C12, Pin No.  */
-    kGPIO_Peri_E6_PWM_3B            = 0x0460,      /**< GPIO_E6, Pin No.  */
-    kGPIO_Peri_E6_XB_IN4            = 0x0461,      /**< GPIO_E6, Pin No.  */
-    kGPIO_Peri_E7_PWM_3A            = 0x0470,      /**< GPIO_E7, Pin No.  */
-    kGPIO_Peri_E7_XB_IN5            = 0x0471,      /**< GPIO_E7, Pin No.  */
-    kGPIO_Peri_F0_XB_IN6            = 0x0500,      /**< GPIO_F0, Pin No.  */
-    kGPIO_Peri_F0_SCLK1             = 0x0502,      /**< GPIO_F0, Pin No.  */
-    kGPIO_Peri_F2_MISO1             = 0x0522,      /**< GPIO_F2, Pin No.  */
-    kGPIO_Peri_F3_MOSI1             = 0x0532,      /**< GPIO_F3, Pin No.  */
-    kGPIO_Peri_F4_TXD1              = 0x0540,      /**< GPIO_F4, Pin No.  */
-    kGPIO_Peri_F4_XB_OUT8           = 0x0541,      /**< GPIO_F4, Pin No.  */
-    kGPIO_Peri_F4_PWM_0X            = 0x0542,      /**< GPIO_F4, Pin No.  */
-    kGPIO_Peri_F4_PWM_FAULT6        = 0x0543,      /**< GPIO_F4, Pin No.  */
-    kGPIO_Peri_F5_RXD1              = 0x0550,      /**< GPIO_F5, Pin No.  */
-    kGPIO_Peri_F5_XB_OUT9           = 0x0551,      /**< GPIO_F5, Pin No.  */
-    kGPIO_Peri_F5_PWM_1X            = 0x0552,      /**< GPIO_F5, Pin No.  */
-    kGPIO_Peri_F5_PWM_FAULT7        = 0x0553,      /**< GPIO_F5, Pin No.  */
-    kGPIO_Peri_F6_PWM_3X            = 0x0561,      /**< GPIO_F6, Pin No.  */
-    kGPIO_Peri_F6_XB_IN2            = 0x0563,      /**< GPIO_F6, Pin No.  */
-    kGPIO_Peri_F7_CMPC_O            = 0x0571,      /**< GPIO_F7, Pin No.  */
-    kGPIO_Peri_F7_SS1_B             = 0x0572,      /**< GPIO_F7, Pin No.  */
-    kGPIO_Peri_F7_XB_IN3            = 0x0573,      /**< GPIO_F7, Pin No.  */
-    kGPIO_Peri_F8_RXD0              = 0x0580,      /**< GPIO_F8, Pin No.  */
-    kGPIO_Peri_F8_XB_OUT10          = 0x0581,      /**< GPIO_F8, Pin No.  */
-    kGPIO_Peri_F8_CMPD_O            = 0x0582,      /**< GPIO_F8, Pin No.  */
-    kGPIO_Peri_F8_PWM_2X            = 0x0583,      /**< GPIO_F8, Pin No.  */
+    kGPIO_Peri_C2_TXD0              = 0x0220,      /**< GPIO_C2, Pin */
+    kGPIO_Peri_C2_XB_OUT11          = 0x0221,      /**< GPIO_C2, Pin */
+    kGPIO_Peri_C2_XB_IN2            = 0x0222,      /**< GPIO_C2, Pin */
+    kGPIO_Peri_C2_CLKO0             = 0x0223,      /**< GPIO_C2, Pin */
+    kGPIO_Peri_C3_TA0               = 0x0230,      /**< GPIO_C3, Pin */
+    kGPIO_Peri_C3_CMPA_O            = 0x0231,      /**< GPIO_C3, Pin */
+    kGPIO_Peri_C3_RXD0              = 0x0232,      /**< GPIO_C3, Pin */
+    kGPIO_Peri_C3_CLKIN1            = 0x0233,      /**< GPIO_C3, Pin */
+    kGPIO_Peri_C4_TA1               = 0x0240,      /**< GPIO_C4, Pin */
+    kGPIO_Peri_C4_CMPB_O            = 0x0241,      /**< GPIO_C4, Pin */
+    kGPIO_Peri_C4_XB_IN6            = 0x0242,      /**< GPIO_C4, Pin */
+    kGPIO_Peri_C4_EWM_OUT_B         = 0x0243,      /**< GPIO_C4, Pin */
+    kGPIO_Peri_C6_TA2               = 0x0260,      /**< GPIO_C6, Pin */
+    kGPIO_Peri_C6_XB_IN3            = 0x0261,      /**< GPIO_C6, Pin */
+    kGPIO_Peri_C6_CMP_REF           = 0x0262,      /**< GPIO_C6, Pin */
+    kGPIO_Peri_C6_SS0_B             = 0x0263,      /**< GPIO_C6, Pin */
+    kGPIO_Peri_C8_MISO0             = 0x0280,      /**< GPIO_C8, Pin */
+    kGPIO_Peri_C8_RXD0              = 0x0281,      /**< GPIO_C8, Pin */
+    kGPIO_Peri_C8_XB_IN9            = 0x0282,      /**< GPIO_C8, Pin */
+    kGPIO_Peri_C8_XB_OUT6           = 0x0283,      /**< GPIO_C8, Pin */
+    kGPIO_Peri_C9_SCLK0             = 0x0290,      /**< GPIO_C9, Pin */
+    kGPIO_Peri_C9_XB_IN4            = 0x0291,      /**< GPIO_C9, Pin */
+    kGPIO_Peri_C9_TXD0              = 0x0292,      /**< GPIO_C9, Pin */
+    kGPIO_Peri_C9_XB_OUT8           = 0x0293,      /**< GPIO_C9, Pin */
+    kGPIO_Peri_C10_MOSI0            = 0x02A0,      /**< GPIO_C10, Pin */
+    kGPIO_Peri_C10_XB_IN5           = 0x02A1,      /**< GPIO_C10, Pin */
+    kGPIO_Peri_C10_MISO0            = 0x02A2,      /**< GPIO_C10, Pin */
+    kGPIO_Peri_C10_XB_OUT9          = 0x02A3,      /**< GPIO_C10, Pin */
+    kGPIO_Peri_E4_PWM_2B            = 0x0440,      /**< GPIO_E4, Pin */
+    kGPIO_Peri_E4_XB_IN2            = 0x0441,      /**< GPIO_E4, Pin */
+    kGPIO_Peri_E5_PWM_2A            = 0x0450,      /**< GPIO_E5, Pin */
+    kGPIO_Peri_E5_XB_IN3            = 0x0451,      /**< GPIO_E5, Pin */
+    kGPIO_Peri_F2_SCL0              = 0x0520,      /**< GPIO_F2, Pin */
+    kGPIO_Peri_F2_XB_OUT6           = 0x0521,      /**< GPIO_F2, Pin */
+    kGPIO_Peri_F3_SDA0              = 0x0530,      /**< GPIO_F3, Pin */
+    kGPIO_Peri_F3_XB_OUT7           = 0x0531,      /**< GPIO_F3, Pin */
+    kGPIO_Peri_A0_ANA0_and_CMPA_IN3 = 0x0000,      /**< GPIO_A0, Pin */
+    kGPIO_Peri_A0_CMPC_O            = 0x0001,      /**< GPIO_A0, Pin */
+    kGPIO_Peri_B1_ANB1_and_CMPB_IN0 = 0x0110,      /**< GPIO_B1, Pin */
+    kGPIO_Peri_B1_DACB_O            = 0x0111,      /**< GPIO_B1, Pin */
+    kGPIO_Peri_C0_EXTAL             = 0x0200,      /**< GPIO_C0, Pin */
+    kGPIO_Peri_C0_CLKIN0            = 0x0201,      /**< GPIO_C0, Pin */
+    kGPIO_Peri_C5_DACA_O            = 0x0250,      /**< GPIO_C5, Pin */
+    kGPIO_Peri_C5_XB_IN7            = 0x0251,      /**< GPIO_C5, Pin */
+    kGPIO_Peri_C7_SS0_B             = 0x0270,      /**< GPIO_C7, Pin */
+    kGPIO_Peri_C7_TXD0              = 0x0271,      /**< GPIO_C7, Pin */
+    kGPIO_Peri_C7_XB_IN8            = 0x0272,      /**< GPIO_C7, Pin */
+    kGPIO_Peri_C11_SCL0             = 0x02B1,      /**< GPIO_C11, Pin */
+    kGPIO_Peri_C11_TXD1             = 0x02B2,      /**< GPIO_C11, Pin */
+    kGPIO_Peri_C12_SDA0             = 0x02C1,      /**< GPIO_C12, Pin */
+    kGPIO_Peri_C12_RXD1             = 0x02C2,      /**< GPIO_C12, Pin */
+    kGPIO_Peri_C13_TA3              = 0x02D0,      /**< GPIO_C13, Pin */
+    kGPIO_Peri_C13_XB_IN6           = 0x02D1,      /**< GPIO_C13, Pin */
+    kGPIO_Peri_C13_EWM_OUT_B        = 0x02D2,      /**< GPIO_C13, Pin */
+    kGPIO_Peri_C14_SDA0             = 0x02E0,      /**< GPIO_C14, Pin */
+    kGPIO_Peri_C14_XB_OUT4          = 0x02E1,      /**< GPIO_C14, Pin */
+    kGPIO_Peri_C14_PWM_FAULT4       = 0x02E2,      /**< GPIO_C14, Pin */
+    kGPIO_Peri_C15_SCL0             = 0x02F0,      /**< GPIO_C15, Pin */
+    kGPIO_Peri_C15_XB_OUT5          = 0x02F1,      /**< GPIO_C15, Pin */
+    kGPIO_Peri_C15_PWM_FAULT5       = 0x02F2,      /**< GPIO_C15, Pin */
+    kGPIO_Peri_F1_CLKO1             = 0x0510,      /**< GPIO_F1, Pin */
+    kGPIO_Peri_F1_XB_IN7            = 0x0511,      /**< GPIO_F1, Pin */
+    kGPIO_Peri_F1_CMPD_O            = 0x0512,      /**< GPIO_F1, Pin */
+    kGPIO_Peri_C11_CANTX            = 0x02B0,      /**< GPIO_C11, Pin */
+    kGPIO_Peri_C12_CANRX            = 0x02C0,      /**< GPIO_C12, Pin */
+    kGPIO_Peri_E6_PWM_3B            = 0x0460,      /**< GPIO_E6, Pin */
+    kGPIO_Peri_E6_XB_IN4            = 0x0461,      /**< GPIO_E6, Pin */
+    kGPIO_Peri_E7_PWM_3A            = 0x0470,      /**< GPIO_E7, Pin */
+    kGPIO_Peri_E7_XB_IN5            = 0x0471,      /**< GPIO_E7, Pin */
+    kGPIO_Peri_F0_XB_IN6            = 0x0500,      /**< GPIO_F0, Pin */
+    kGPIO_Peri_F0_SCLK1             = 0x0502,      /**< GPIO_F0, Pin */
+    kGPIO_Peri_F2_MISO1             = 0x0522,      /**< GPIO_F2, Pin */
+    kGPIO_Peri_F3_MOSI1             = 0x0532,      /**< GPIO_F3, Pin */
+    kGPIO_Peri_F4_TXD1              = 0x0540,      /**< GPIO_F4, Pin */
+    kGPIO_Peri_F4_XB_OUT8           = 0x0541,      /**< GPIO_F4, Pin */
+    kGPIO_Peri_F4_PWM_0X            = 0x0542,      /**< GPIO_F4, Pin */
+    kGPIO_Peri_F4_PWM_FAULT6        = 0x0543,      /**< GPIO_F4, Pin */
+    kGPIO_Peri_F5_RXD1              = 0x0550,      /**< GPIO_F5, Pin */
+    kGPIO_Peri_F5_XB_OUT9           = 0x0551,      /**< GPIO_F5, Pin */
+    kGPIO_Peri_F5_PWM_1X            = 0x0552,      /**< GPIO_F5, Pin */
+    kGPIO_Peri_F5_PWM_FAULT7        = 0x0553,      /**< GPIO_F5, Pin */
+    kGPIO_Peri_F6_PWM_3X            = 0x0561,      /**< GPIO_F6, Pin */
+    kGPIO_Peri_F6_XB_IN2            = 0x0563,      /**< GPIO_F6, Pin */
+    kGPIO_Peri_F7_CMPC_O            = 0x0571,      /**< GPIO_F7, Pin */
+    kGPIO_Peri_F7_SS1_B             = 0x0572,      /**< GPIO_F7, Pin */
+    kGPIO_Peri_F7_XB_IN3            = 0x0573,      /**< GPIO_F7, Pin */
+    kGPIO_Peri_F8_RXD0              = 0x0580,      /**< GPIO_F8, Pin */
+    kGPIO_Peri_F8_XB_OUT10          = 0x0581,      /**< GPIO_F8, Pin */
+    kGPIO_Peri_F8_CMPD_O            = 0x0582,      /**< GPIO_F8, Pin */
+    kGPIO_Peri_F8_PWM_2X            = 0x0583,      /**< GPIO_F8, Pin */
 } gpio_peripheral_mux_t;
 
 /* @} */
@@ -1920,5 +1923,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* SIM_H_ */
+#endif  /* PERI_SIM_H_ */
 

@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2021-01-27
-**     Build:               b230724
+**     Build:               b230919
 **
 **     Abstract:
 **         Chip specific module features.
@@ -153,8 +153,7 @@
 
 /* @brief Is of type FTFA. */
 #define FSL_FEATURE_FTFA_TYPE (1)
-/* @brief Has flags indicating the status of the FlexRAM (register bits FCNFG[EEERDY], FCNFG[RAMRDY] and FCNFG[PFLSH]).
- */
+/* @brief Has flags indicating the status of the FlexRAM (register bits FCNFG[EEERDY], FCNFG[RAMRDY] and FCNFG[PFLSH]). */
 #define FSL_FEATURE_FTFA_HAS_FLEX_RAM_FLAGS (0)
 /* @brief Has program flash swapping status flag (register bit FCNFG[SWAP]). */
 #define FSL_FEATURE_FTFA_HAS_PFLASH_SWAPPING_STATUS_FLAG (0)
@@ -338,7 +337,7 @@
 /* @brief If (e)FlexPWM has mux trigger source select bit field. */
 #define FSL_FEATURE_PWM_HAS_MUX_TRIGGER_SOURCE_SEL (1)
 /* @brief Number of submodules in each (e)FlexPWM module. */
-#define FSL_FEATURE_PWM_SUBMODULE_COUNT (4U)
+#define FSL_FEATURE_PWM_SUBMODULE_COUNT (4)
 /* @brief Number of fault channel in each (e)FlexPWM module. */
 #define FSL_FEATURE_PWM_FAULT_CH_COUNT (2)
 /* @brief If (e)FlexPWM has phase delay register. */
@@ -358,7 +357,7 @@
 /* @brief If (e)FlexPWM has FCTRL2 register. */
 #define FSL_FEATURE_PWM_HAS_FCTRL2_REGISTER (0)
 /* @brief Bitwidth of DTCNTx in (e)FlexPWM module. */
-#define FSL_FEATURE_PWM_NUM_BITWIDTH_DTCNT (11U)
+#define FSL_FEATURE_PWM_NUM_BITWIDTH_DTCNT (11)
 /* @brief If (e)FlexPWM has Capture Input Filter Register */
 #define FSL_FEATURE_PWM_HAS_CAPTFILT_REGISTER (0)
 
@@ -436,3 +435,4 @@
 #define FSL_FEATURE_XBARA_INTERRUPT_COUNT (4)
 
 #endif /* _MC56F82746_FEATURES_H_ */
+

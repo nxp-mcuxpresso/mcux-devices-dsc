@@ -18,14 +18,14 @@
 **                          MC56F84786VLK
 **                          MC56F84789VLL
 **
-**     Version:             rev. 2.0, 2021-02-06
-**     Build:               b240709
+**     Version:             rev. 3.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for ADC
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -34,21 +34,24 @@
 **     Revisions:
 **     - rev. 2.0 (2021-02-06)
 **         Initial version.
+**     - rev. 3.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file ADC.h
- * @version 2.0
- * @date 2021-02-06
+ * @file PERI_ADC.h
+ * @version 3.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for ADC
  *
  * CMSIS Peripheral Access Layer for ADC
  */
 
-#if !defined(ADC_H_)
-#define ADC_H_                                   /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_ADC_H_)
+#define PERI_ADC_H_                              /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F84441VLF))
 #include "MC56F84441_COMMON.h"
@@ -182,13 +185,13 @@ typedef struct {
 #define ADC_CTRL1_CHNCFG_L_MASK                  (0xF0U)
 #define ADC_CTRL1_CHNCFG_L_SHIFT                 (4U)
 /*! CHNCFG_L - CHCNF (Channel Configure Low) bits
- *  0bxxx1..Inputs = ANA0-ANA1 Configured as differential pair (ANA0 is + and ANA1 is --)
- *  0bxxx0..Inputs = ANA0-ANA1 Both configured as single ended inputs
- *  0bxx1x..Inputs = ANA2-ANA3 Configured as differential pair (ANA2 is + and ANA3 is --)
- *  0bxx0x..Inputs = ANA2-ANA3 Both configured as single ended inputs
- *  0bx1xx..Inputs = ANB0-ANB1 Configured as differential pair (ANB0 is + and ANB1 is --)
- *  0bx0xx..Inputs = ANB0-ANB1 Both configured as single ended inputs
  *  0b1xxx..Inputs = ANB2-ANB3 Configured as differential pair (ANB2 is + and ANB3 is --)
+ *  0bx0xx..Inputs = ANB0-ANB1 Both configured as single ended inputs
+ *  0bx1xx..Inputs = ANB0-ANB1 Configured as differential pair (ANB0 is + and ANB1 is --)
+ *  0bxx0x..Inputs = ANA2-ANA3 Both configured as single ended inputs
+ *  0bxx1x..Inputs = ANA2-ANA3 Configured as differential pair (ANA2 is + and ANA3 is --)
+ *  0bxxx0..Inputs = ANA0-ANA1 Both configured as single ended inputs
+ *  0bxxx1..Inputs = ANA0-ANA1 Configured as differential pair (ANA0 is + and ANA1 is --)
  */
 #define ADC_CTRL1_CHNCFG_L(x)                    (((uint16_t)(((uint16_t)(x)) << ADC_CTRL1_CHNCFG_L_SHIFT)) & ADC_CTRL1_CHNCFG_L_MASK)
 
@@ -276,13 +279,13 @@ typedef struct {
 #define ADC_CTRL2_CHNCFG_H_MASK                  (0x780U)
 #define ADC_CTRL2_CHNCFG_H_SHIFT                 (7U)
 /*! CHNCFG_H - CHCNF (Channel Configure High) bits
- *  0bxxx1..Inputs = ANA4-ANA5 Configured as differential pair (ANA4 is + and ANA5 is --)
- *  0bxxx0..Inputs = ANA4-ANA5 Both configured as single ended inputs
- *  0bxx1x..Inputs = ANA6-ANA7 Configured as differential pair (ANA6 is + and ANA7 is --)
- *  0bxx0x..Inputs = ANA6-ANA7 Both configured as single ended inputs
- *  0bx1xx..Inputs = ANB4-ANB5 Configured as differential pair (ANB4 is + and ANB5 is --)
- *  0bx0xx..Inputs = ANB4-ANB5 Both configured as single ended inputs
  *  0b1xxx..Inputs = ANB6-ANB7 Configured as differential pair (ANB6 is + and ANB7 is --)
+ *  0bx0xx..Inputs = ANB4-ANB5 Both configured as single ended inputs
+ *  0bx1xx..Inputs = ANB4-ANB5 Configured as differential pair (ANB4 is + and ANB5 is --)
+ *  0bxx0x..Inputs = ANA6-ANA7 Both configured as single ended inputs
+ *  0bxx1x..Inputs = ANA6-ANA7 Configured as differential pair (ANA6 is + and ANA7 is --)
+ *  0bxxx0..Inputs = ANA4-ANA5 Both configured as single ended inputs
+ *  0bxxx1..Inputs = ANA4-ANA5 Configured as differential pair (ANA4 is + and ANA5 is --)
  */
 #define ADC_CTRL2_CHNCFG_H(x)                    (((uint16_t)(((uint16_t)(x)) << ADC_CTRL2_CHNCFG_H_SHIFT)) & ADC_CTRL2_CHNCFG_H_MASK)
 
@@ -1388,5 +1391,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* ADC_H_ */
+#endif  /* PERI_ADC_H_ */
 

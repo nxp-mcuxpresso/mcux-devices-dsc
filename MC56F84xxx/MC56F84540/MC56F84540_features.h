@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2021-02-26
-**     Build:               b230724
+**     Build:               b230919
 **
 **     Abstract:
 **         Chip specific module features.
@@ -117,18 +117,13 @@
 #define FSL_FEATURE_FLEXCAN_SUPPORT_ENGINE_CLK_SEL_REMOVE (0)
 /* @brief Instance remove CAN Engine Clock Source Selection from unsupported part. */
 #define FSL_FEATURE_FLEXCAN_INSTANCE_SUPPORT_ENGINE_CLK_SEL_REMOVEn(x) (0)
-/* @brief Is affected by errata with ID 5641 (Module does not transmit a message that is enabled to be transmitted at a
- * specific moment during the arbitration process). */
+/* @brief Is affected by errata with ID 5641 (Module does not transmit a message that is enabled to be transmitted at a specific moment during the arbitration process). */
 #define FSL_FEATURE_FLEXCAN_HAS_ERRATA_5641 (0)
-/* @brief Is affected by errata with ID 5829 (FlexCAN: FlexCAN does not transmit a message that is enabled to be
- * transmitted in a specific moment during the arbitration process). */
+/* @brief Is affected by errata with ID 5829 (FlexCAN: FlexCAN does not transmit a message that is enabled to be transmitted in a specific moment during the arbitration process). */
 #define FSL_FEATURE_FLEXCAN_HAS_ERRATA_5829 (1)
-/* @brief Is affected by errata with ID 6032 (FlexCAN: A frame with wrong ID or payload is transmitted into the CAN bus
- * when the Message Buffer under transmission is either aborted or deactivated while the CAN bus is in the Bus Idle
- * state). */
+/* @brief Is affected by errata with ID 6032 (FlexCAN: A frame with wrong ID or payload is transmitted into the CAN bus when the Message Buffer under transmission is either aborted or deactivated while the CAN bus is in the Bus Idle state). */
 #define FSL_FEATURE_FLEXCAN_HAS_ERRATA_6032 (1)
-/* @brief Is affected by errata with ID 9595 (FlexCAN: Corrupt frame possible if the Freeze Mode or the Low-Power Mode
- * are entered during a Bus-Off state). */
+/* @brief Is affected by errata with ID 9595 (FlexCAN: Corrupt frame possible if the Freeze Mode or the Low-Power Mode are entered during a Bus-Off state). */
 #define FSL_FEATURE_FLEXCAN_HAS_ERRATA_9595 (0)
 /* @brief Has CAN with Flexible Data rate (CAN FD) protocol. */
 #define FSL_FEATURE_FLEXCAN_HAS_FLEXIBLE_DATA_RATE (0)
@@ -199,8 +194,7 @@
 
 /* @brief Is of type FTFL. */
 #define FSL_FEATURE_FTFL_TYPE (1)
-/* @brief Has flags indicating the status of the FlexRAM (register bits FCNFG[EEERDY], FCNFG[RAMRDY] and FCNFG[PFLSH]).
- */
+/* @brief Has flags indicating the status of the FlexRAM (register bits FCNFG[EEERDY], FCNFG[RAMRDY] and FCNFG[PFLSH]). */
 #define FSL_FEATURE_FTFL_HAS_FLEX_RAM_FLAGS (1)
 /* @brief Has program flash swapping status flag (register bit FCNFG[SWAP]). */
 #define FSL_FEATURE_FTFL_HAS_PFLASH_SWAPPING_STATUS_FLAG (0)
@@ -384,7 +378,7 @@
 /* @brief If (e)FlexPWM has mux trigger source select bit field. */
 #define FSL_FEATURE_PWM_HAS_MUX_TRIGGER_SOURCE_SEL (1)
 /* @brief Number of submodules in each (e)FlexPWM module. */
-#define FSL_FEATURE_PWM_SUBMODULE_COUNT (4U)
+#define FSL_FEATURE_PWM_SUBMODULE_COUNT (4)
 /* @brief Number of fault channel in each (e)FlexPWM module. */
 #define FSL_FEATURE_PWM_FAULT_CH_COUNT (2)
 /* @brief If (e)FlexPWM has phase delay register. */
@@ -404,7 +398,7 @@
 /* @brief If (e)FlexPWM has FCTRL2 register. */
 #define FSL_FEATURE_PWM_HAS_FCTRL2_REGISTER (0)
 /* @brief Bitwidth of DTCNTx in (e)FlexPWM module. */
-#define FSL_FEATURE_PWM_NUM_BITWIDTH_DTCNT (11U)
+#define FSL_FEATURE_PWM_NUM_BITWIDTH_DTCNT (11)
 /* @brief If (e)FlexPWM has Capture Input Filter Register */
 #define FSL_FEATURE_PWM_HAS_CAPTFILT_REGISTER (0)
 
@@ -515,3 +509,4 @@
 #define FSL_FEATURE_XBARA_INTERRUPT_COUNT (4)
 
 #endif /* _MC56F84540_FEATURES_H_ */
+

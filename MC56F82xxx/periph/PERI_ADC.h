@@ -22,14 +22,14 @@
 **                          MC56F82748MLH
 **                          MC56F82748VLH
 **
-**     Version:             rev. 0.1, 2020-12-11
-**     Build:               b240709
+**     Version:             rev. 1.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for ADC
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -38,21 +38,24 @@
 **     Revisions:
 **     - rev. 0.1 (2020-12-11)
 **         Initial version.
+**     - rev. 1.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file ADC.h
- * @version 0.1
- * @date 2020-12-11
+ * @file PERI_ADC.h
+ * @version 1.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for ADC
  *
  * CMSIS Peripheral Access Layer for ADC
  */
 
-#if !defined(ADC_H_)
-#define ADC_H_                                   /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_ADC_H_)
+#define PERI_ADC_H_                              /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F82313VLC))
 #include "MC56F82313_COMMON.h"
@@ -201,13 +204,13 @@ typedef struct {
 #define ADC_CTRL1_CHNCFG_L_MASK                  (0xF0U)
 #define ADC_CTRL1_CHNCFG_L_SHIFT                 (4U)
 /*! CHNCFG_L - CHCNF (Channel Configure Low) bits
- *  0bxxx1..Inputs = ANA0-ANA1 Configured as differential pair (ANA0 is + and ANA1 is -)
- *  0bxxx0..Inputs = ANA0-ANA1 Both configured as single ended inputs
- *  0bxx1x..Inputs = ANA2-ANA3 Configured as differential pair (ANA2 is + and ANA3 is -)
- *  0bxx0x..Inputs = ANA2-ANA3 Both configured as single ended inputs
- *  0bx1xx..Inputs = ANB0-ANB1 Configured as differential pair (ANB0 is + and ANB1 is -)
- *  0bx0xx..Inputs = ANB0-ANB1 Both configured as single ended inputs
  *  0b1xxx..Inputs = ANB2-ANB3 Configured as differential pair (ANB2 is + and ANB3 is -)
+ *  0bx0xx..Inputs = ANB0-ANB1 Both configured as single ended inputs
+ *  0bx1xx..Inputs = ANB0-ANB1 Configured as differential pair (ANB0 is + and ANB1 is -)
+ *  0bxx0x..Inputs = ANA2-ANA3 Both configured as single ended inputs
+ *  0bxx1x..Inputs = ANA2-ANA3 Configured as differential pair (ANA2 is + and ANA3 is -)
+ *  0bxxx0..Inputs = ANA0-ANA1 Both configured as single ended inputs
+ *  0bxxx1..Inputs = ANA0-ANA1 Configured as differential pair (ANA0 is + and ANA1 is -)
  */
 #define ADC_CTRL1_CHNCFG_L(x)                    (((uint16_t)(((uint16_t)(x)) << ADC_CTRL1_CHNCFG_L_SHIFT)) & ADC_CTRL1_CHNCFG_L_MASK)
 
@@ -295,13 +298,13 @@ typedef struct {
 #define ADC_CTRL2_CHNCFG_H_MASK                  (0x780U)
 #define ADC_CTRL2_CHNCFG_H_SHIFT                 (7U)
 /*! CHNCFG_H - CHCNF (Channel Configure High) bits
- *  0bxxx1..Inputs = ANA4-ANA5 Configured as differential pair (ANA4 is + and ANA5 is -)
- *  0bxxx0..Inputs = ANA4-ANA5 Both configured as single ended inputs
- *  0bxx1x..Inputs = ANA6-ANA7 Configured as differential pair (ANA6 is + and ANA7 is -)
- *  0bxx0x..Inputs = ANA6-ANA7 Both configured as single ended inputs
- *  0bx1xx..Inputs = ANB4-ANB5 Configured as differential pair (ANB4 is + and ANB5 is -)
- *  0bx0xx..Inputs = ANB4-ANB5 Both configured as single ended inputs
  *  0b1xxx..Inputs = ANB6-ANB7 Configured as differential pair (ANB6 is + and ANB7 is -)
+ *  0bx0xx..Inputs = ANB4-ANB5 Both configured as single ended inputs
+ *  0bx1xx..Inputs = ANB4-ANB5 Configured as differential pair (ANB4 is + and ANB5 is -)
+ *  0bxx0x..Inputs = ANA6-ANA7 Both configured as single ended inputs
+ *  0bxx1x..Inputs = ANA6-ANA7 Configured as differential pair (ANA6 is + and ANA7 is -)
+ *  0bxxx0..Inputs = ANA4-ANA5 Both configured as single ended inputs
+ *  0bxxx1..Inputs = ANA4-ANA5 Configured as differential pair (ANA4 is + and ANA5 is -)
  */
 #define ADC_CTRL2_CHNCFG_H(x)                    (((uint16_t)(((uint16_t)(x)) << ADC_CTRL2_CHNCFG_H_SHIFT)) & ADC_CTRL2_CHNCFG_H_MASK)
 
@@ -1340,26 +1343,26 @@ typedef struct {
 #define ADC_CTRL3_UPDEN_L_MASK                   (0xF00U)
 #define ADC_CTRL3_UPDEN_L_SHIFT                  (8U)
 /*! UPDEN_L - Unipolar Differential Enable Low bits
- *  0bxxx1..Inputs = ANA0-ANA1 Unipolar differential mode enabled on ANA0-ANA1
- *  0bxxx0..Inputs = ANA0-ANA1 Fully differential mode enabled on ANA0-ANA1
- *  0bxx1x..Inputs = ANA2-ANA3 Unipolar differential mode enabled on ANA2-ANA3
- *  0bxx0x..Inputs = ANA2-ANA3 Fully differential mode enabled on ANA2-ANA3
- *  0bx1xx..Inputs = ANB0-ANB1 Unipolar differential mode enabled on ANB0-ANB1
- *  0bx0xx..Inputs = ANB0-ANB1 Fully differential mode enabled on ANB0-ANB1
  *  0b1xxx..Inputs = ANB2-ANB3 Unipolar differential mode enabled on ANB2-ANB3
+ *  0bx0xx..Inputs = ANB0-ANB1 Fully differential mode enabled on ANB0-ANB1
+ *  0bx1xx..Inputs = ANB0-ANB1 Unipolar differential mode enabled on ANB0-ANB1
+ *  0bxx0x..Inputs = ANA2-ANA3 Fully differential mode enabled on ANA2-ANA3
+ *  0bxx1x..Inputs = ANA2-ANA3 Unipolar differential mode enabled on ANA2-ANA3
+ *  0bxxx0..Inputs = ANA0-ANA1 Fully differential mode enabled on ANA0-ANA1
+ *  0bxxx1..Inputs = ANA0-ANA1 Unipolar differential mode enabled on ANA0-ANA1
  */
 #define ADC_CTRL3_UPDEN_L(x)                     (((uint16_t)(((uint16_t)(x)) << ADC_CTRL3_UPDEN_L_SHIFT)) & ADC_CTRL3_UPDEN_L_MASK)
 
 #define ADC_CTRL3_UPDEN_H_MASK                   (0xF000U)
 #define ADC_CTRL3_UPDEN_H_SHIFT                  (12U)
 /*! UPDEN_H - Unipolar Differential Enable High bits
- *  0bxxx1..Inputs = ANA4-ANA5 Unipolar differential mode enabled on ANA4-ANA5
- *  0bxxx0..Inputs = ANA4-ANA5 Fully differential mode enabled on ANA4-ANA5
- *  0bxx1x..Inputs = ANA6-ANA7 Unipolar differential mode enabled on ANA6-ANA7
- *  0bxx0x..Inputs = ANA6-ANA7 Fully differential mode enabled on ANA6-ANA7
- *  0bx1xx..Inputs = ANB4-ANB5 Unipolar differential mode enabled on ANB4-ANB5
- *  0bx0xx..Inputs = ANB4-ANB5 Fully differential mode enabled on ANB4-ANB5
  *  0b1xxx..Inputs = ANB6-ANB7 Unipolar differential mode enabled on ANB6-ANB7
+ *  0bx0xx..Inputs = ANB4-ANB5 Fully differential mode enabled on ANB4-ANB5
+ *  0bx1xx..Inputs = ANB4-ANB5 Unipolar differential mode enabled on ANB4-ANB5
+ *  0bxx0x..Inputs = ANA6-ANA7 Fully differential mode enabled on ANA6-ANA7
+ *  0bxx1x..Inputs = ANA6-ANA7 Unipolar differential mode enabled on ANA6-ANA7
+ *  0bxxx0..Inputs = ANA4-ANA5 Fully differential mode enabled on ANA4-ANA5
+ *  0bxxx1..Inputs = ANA4-ANA5 Unipolar differential mode enabled on ANA4-ANA5
  */
 #define ADC_CTRL3_UPDEN_H(x)                     (((uint16_t)(((uint16_t)(x)) << ADC_CTRL3_UPDEN_H_SHIFT)) & ADC_CTRL3_UPDEN_H_MASK)
 /*! @} */
@@ -1700,5 +1703,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* ADC_H_ */
+#endif  /* PERI_ADC_H_ */
 

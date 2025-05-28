@@ -17,14 +17,14 @@
 **                          MC56F80748MLH
 **                          MC56F80748VLH
 **
-**     Version:             rev. 0.1, 2022-01-12
-**     Build:               b240709
+**     Version:             rev. 1.0, 2024-10-29
+**     Build:               b250520
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for COP
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2024 NXP
+**     Copyright 2016-2025 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -33,21 +33,24 @@
 **     Revisions:
 **     - rev. 0.1 (2022-01-12)
 **         Initial version.
+**     - rev. 1.0 (2024-10-29)
+**         Change the device header file from single flat file to multiple files based on peripherals,
+**         each peripheral with dedicated header file located in periphN folder.
 **
 ** ###################################################################
 */
 
 /*!
- * @file COP.h
- * @version 0.1
- * @date 2022-01-12
+ * @file PERI_COP.h
+ * @version 1.0
+ * @date 2024-10-29
  * @brief CMSIS Peripheral Access Layer for COP
  *
  * CMSIS Peripheral Access Layer for COP
  */
 
-#if !defined(COP_H_)
-#define COP_H_                                   /**< Symbol preventing repeated inclusion */
+#if !defined(PERI_COP_H_)
+#define PERI_COP_H_                              /**< Symbol preventing repeated inclusion */
 
 #if (defined(CPU_MC56F80623VLC))
 #include "MC56F80623_COMMON.h"
@@ -262,5 +265,5 @@ typedef struct {
  */ /* end of group Peripheral_access_layer */
 
 
-#endif  /* COP_H_ */
+#endif  /* PERI_COP_H_ */
 
