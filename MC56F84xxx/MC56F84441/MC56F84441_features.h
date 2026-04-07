@@ -1,13 +1,13 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2021-02-26
-**     Build:               b230919
+**     Build:               b260318
 **
 **     Abstract:
 **         Chip specific module features.
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2023 NXP
+**     Copyright 2016-2026 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -61,6 +61,8 @@
 #define FSL_FEATURE_SOC_PMC_COUNT (1)
 /* @brief PWM availability on the SoC. */
 #define FSL_FEATURE_SOC_PWM_COUNT (1)
+/* @brief QDC availability on the SoC. */
+#define FSL_FEATURE_SOC_QDC_COUNT (1)
 /* @brief QSCI availability on the SoC. */
 #define FSL_FEATURE_SOC_QSCI_COUNT (2)
 /* @brief QSPI availability on the SoC. */
@@ -266,6 +268,11 @@
 /* @brief Has control of the drive capability of the I2C pins. */
 #define FSL_FEATURE_I2C_HAS_HIGH_DRIVE_SELECTION (1)
 
+/* INTC module features */
+
+/* @brief VBA register address shift. */
+#define FSL_FEATURE_INTC_VBA_ADDR_SHIFT (8)
+
 /* MCM module features */
 
 /* @brief If MCM has UBROMBAR register. */
@@ -451,7 +458,7 @@
 
 /* XBARA module features */
 
-/* @brief Number of dma/interrupt requests. */
+/* @brief Number of interrupt requests. */
 #define FSL_FEATURE_XBARA_INTERRUPT_COUNT (4)
 
 #endif /* _MC56F84441_FEATURES_H_ */

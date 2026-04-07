@@ -1,13 +1,13 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2021-02-26
-**     Build:               b230919
+**     Build:               b260325
 **
 **     Abstract:
 **         Chip specific module features.
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2023 NXP
+**     Copyright 2016-2026 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -65,6 +65,8 @@
 #define FSL_FEATURE_SOC_PMC_COUNT (1)
 /* @brief PWM availability on the SoC. */
 #define FSL_FEATURE_SOC_PWM_COUNT (2)
+/* @brief QDC availability on the SoC. */
+#define FSL_FEATURE_SOC_QDC_COUNT (1)
 /* @brief QSCI availability on the SoC. */
 #define FSL_FEATURE_SOC_QSCI_COUNT (3)
 /* @brief QSPI availability on the SoC. */
@@ -133,6 +135,18 @@
 #define FSL_FEATURE_FLEXCAN_HAS_EXTRA_MB_INT (1)
 /* @brief Has memory error control (register MECR). */
 #define FSL_FEATURE_FLEXCAN_HAS_MEMORY_ERROR_CONTROL (0)
+/* @brief Has restricted operation mode (bitfield CTRL1[ROM]). */
+#define FSL_FEATURE_FLEXCAN_HAS_RESTRICTED_OPERATION_MODE (0)
+/* @brief Has retry control (bitfield CTRL2[RETRY]). */
+#define FSL_FEATURE_FLEXCAN_FLEXCAN_HAS_RETRY_CONTROL (0)
+/* @brief Has fault reaction (bitfield CTRL2[FLT_RXN]). */
+#define FSL_FEATURE_FLEXCAN_HAS_FAULT_REACTION (0)
+/* @brief Has TX pin override (bitfield MCR[TPOE]). */
+#define FSL_FEATURE_FLEXCAN_HAS_TX_PIN_OVERRIDE (0)
+/* @brief Has fault confine interrupt (register FLTCONF_IE). */
+#define FSL_FEATURE_FLEXCAN_HAS_FAULT_CONFINE_INTERRUPT (0)
+/* @brief Instance has self wake feature (bitfield MCR[SLFWAK]). */
+#define FSL_FEATURE_FLEXCAN_INSTANCE_HAS_SELF_WAKEn(x) (1)
 
 /* CMP module features */
 
@@ -319,6 +333,11 @@
 #define FSL_FEATURE_I2C_MAX_GLITCH_FILTER_WIDTH (7)
 /* @brief Has control of the drive capability of the I2C pins. */
 #define FSL_FEATURE_I2C_HAS_HIGH_DRIVE_SELECTION (1)
+
+/* INTC module features */
+
+/* @brief VBA register address shift. */
+#define FSL_FEATURE_INTC_VBA_ADDR_SHIFT (8)
 
 /* MCM module features */
 
@@ -538,7 +557,7 @@
 
 /* XBARA module features */
 
-/* @brief Number of dma/interrupt requests. */
+/* @brief Number of interrupt requests. */
 #define FSL_FEATURE_XBARA_INTERRUPT_COUNT (4)
 
 #endif /* _MC56F84789_FEATURES_H_ */
