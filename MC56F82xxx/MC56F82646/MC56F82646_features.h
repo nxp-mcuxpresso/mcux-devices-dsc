@@ -1,13 +1,13 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2021-01-27
-**     Build:               b230919
+**     Build:               b260520
 **
 **     Abstract:
 **         Chip specific module features.
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2023 NXP
+**     Copyright 2016-2026 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -243,6 +243,11 @@
 /* @brief P-Flash swap control command address alignment. */
 #define FSL_FEATURE_FTFA_PFLASH_SWAP_CONTROL_CMD_ADDRESS_ALIGMENT (0)
 
+/* INTC module features */
+
+/* @brief VBA register address shift. */
+#define FSL_FEATURE_INTC_VBA_ADDR_SHIFT (8)
+
 /* MCM module features */
 
 /* @brief If MCM has UBROMBAR register. */
@@ -395,7 +400,7 @@
 
 /* XBARA module features */
 
-/* @brief Number of dma/interrupt requests. */
+/* @brief Number of interrupt requests. */
 #define FSL_FEATURE_XBARA_INTERRUPT_COUNT (4)
 
 #endif /* _MC56F82646_FEATURES_H_ */

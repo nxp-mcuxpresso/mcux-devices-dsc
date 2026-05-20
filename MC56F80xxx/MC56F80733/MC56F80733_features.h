@@ -1,13 +1,13 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2022-01-28
-**     Build:               b230919
+**     Build:               b260520
 **
 **     Abstract:
 **         Chip specific module features.
 **
 **     Copyright 2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2023 NXP
+**     Copyright 2016-2026 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -157,6 +157,8 @@
 #define FSL_FEATURE_DMAMUX_HAS_A_ON (0)
 /* @brief Register CHCFGn width. */
 #define FSL_FEATURE_DMAMUX_CHCFG_REGISTER_WIDTH (8)
+/* @brief Register CHCFGn sorted in order 3, 2 ,1 ,0 ,7 ,6 ,5 ,4 ... */
+#define FSL_FEATURE_DMAMUX_CHANNEL_NEEDS_ENDIAN_CONVERT (0)
 
 /* EQDC module features */
 
@@ -302,6 +304,11 @@
 #define FSL_FEATURE_FTFA_PFLASH_CHECK_CMD_ADDRESS_ALIGMENT (4)
 /* @brief P-Flash swap control command address alignment. */
 #define FSL_FEATURE_FTFA_PFLASH_SWAP_CONTROL_CMD_ADDRESS_ALIGMENT (0)
+
+/* INTC module features */
+
+/* @brief VBA register address shift. */
+#define FSL_FEATURE_INTC_VBA_ADDR_SHIFT (8)
 
 /* LPI2C module features */
 
