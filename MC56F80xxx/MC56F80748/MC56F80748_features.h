@@ -350,6 +350,8 @@
 #define FSL_FEATURE_PIT_HAS_FILT (1)
 /* @brief If PIT has CTRL2 register */
 #define FSL_FEATURE_PIT_HAS_CTRL2 (1)
+/* @brief If PIT CTRL register has SLAVE bit field */
+#define FSL_FEATURE_PIT_CTRL_HAS_SLAVE (1)
 
 /* PMC module features */
 
