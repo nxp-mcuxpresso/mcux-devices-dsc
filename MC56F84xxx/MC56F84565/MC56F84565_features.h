@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2021-02-26
-**     Build:               b260325
+**     Build:               b260723
 **
 **     Abstract:
 **         Chip specific module features.
@@ -97,7 +97,7 @@
 
 /* FLEXCAN module features */
 
-/* @brief Message buffer size */
+/* @brief Message buffer size. */
 #define FSL_FEATURE_FLEXCAN_HAS_MESSAGE_BUFFER_MAX_NUMBERn(x) (16)
 /* @brief Has doze mode support (register bit field MCR[DOZE]). */
 #define FSL_FEATURE_FLEXCAN_HAS_DOZE_MODE_SUPPORT (1)
@@ -143,8 +143,6 @@
 #define FSL_FEATURE_FLEXCAN_HAS_TX_PIN_OVERRIDE (0)
 /* @brief Has fault confine interrupt (register FLTCONF_IE). */
 #define FSL_FEATURE_FLEXCAN_HAS_FAULT_CONFINE_INTERRUPT (0)
-/* @brief Instance has self wake feature (bitfield MCR[SLFWAK]). */
-#define FSL_FEATURE_FLEXCAN_INSTANCE_HAS_SELF_WAKEn(x) (1)
 
 /* CMP module features */
 
@@ -348,6 +346,12 @@
 #define FSL_FEATURE_MCM_CPCR_HAS_FCSDIS_BIT_FIELD (0)
 /* @brief If MCM CPCR register has XBARARB bit field. */
 #define FSL_FEATURE_MCM_CPCR_HAS_XBARARB_BIT_FIELD (1)
+/* @brief If MCM has reverse carry (CPCR RCDIS bit field). */
+#define FSL_FEATURE_MCM_HAS_REVERSE_CARRY (1)
+/* @brief If MCM has core instruction buffer (CPCR IBDIS bit field). */
+#define FSL_FEATURE_MCM_HAS_INSTRUCTION_BUFFER (1)
+/* @brief If MCM has resource protection (RPCR register). */
+#define FSL_FEATURE_MCM_HAS_RESOURCE_PROTECTION (1)
 
 /* PIT module features */
 

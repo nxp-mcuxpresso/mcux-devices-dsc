@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2022-01-28
-**     Build:               b260520
+**     Build:               b260810
 **
 **     Abstract:
 **         Chip specific module features.
@@ -185,6 +185,11 @@
 /* @brief If QDC has POSDPERH register. */
 #define FSL_FEATURE_EQDC_HAS_POSDPERH_REGISTER (1)
 
+/* EVTG module features */
+
+/* @brief OPAMP support force bypass */
+#define FSL_FEATURE_EVTG_HAS_FORCE_BYPASS_FLIPFLOP (1)
+
 /* EWM module features */
 
 /* @brief Has clock select (register CLKCTRL). */
@@ -339,6 +344,12 @@
 #define FSL_FEATURE_MCM_CPCR_HAS_FCSDIS_BIT_FIELD (1)
 /* @brief If MCM CPCR register has XBARARB bit field. */
 #define FSL_FEATURE_MCM_CPCR_HAS_XBARARB_BIT_FIELD (1)
+/* @brief If MCM has reverse carry (CPCR RCDIS bit field). */
+#define FSL_FEATURE_MCM_HAS_REVERSE_CARRY (1)
+/* @brief If MCM has core instruction buffer (CPCR IBDIS bit field). */
+#define FSL_FEATURE_MCM_HAS_INSTRUCTION_BUFFER (1)
+/* @brief If MCM has resource protection (RPCR register). */
+#define FSL_FEATURE_MCM_HAS_RESOURCE_PROTECTION (1)
 
 /* PIT module features */
 

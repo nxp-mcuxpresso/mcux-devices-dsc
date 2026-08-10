@@ -19,13 +19,13 @@
 **                          MC56F84789VLL
 **
 **     Version:             rev. 3.0, 2024-10-29
-**     Build:               b250520
+**     Build:               b260810
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for SIM
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2025 NXP
+**     Copyright 2016-2026 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -424,8 +424,8 @@ typedef struct {
   __IO uint16_t SCR1;                              /**< Software Control Register, offset: 0x3 */
   __IO uint16_t SCR2;                              /**< Software Control Register, offset: 0x4 */
   __IO uint16_t SCR3;                              /**< Software Control Register, offset: 0x5 */
-       uint16_t MSHID;                             /**< Most Significant Half of JTAG ID, offset: 0x6 */
-       uint16_t LSHID;                             /**< Least Significant Half of JTAG ID, offset: 0x7 */
+  __I  uint16_t MSHID;                             /**< Most Significant Half of JTAG ID, offset: 0x6 */
+  __I  uint16_t LSHID;                             /**< Least Significant Half of JTAG ID, offset: 0x7 */
   __IO uint16_t PWR;                               /**< Power Control Register, offset: 0x8 */
        uint16_t RESERVED_0[1];
   __IO uint16_t CLKOUT;                            /**< Clock Output Select Register, offset: 0xA */

@@ -1,7 +1,7 @@
 /*
 ** ###################################################################
 **     Version:             rev. 0.1, 2021-02-26
-**     Build:               b260318
+**     Build:               b260723
 **
 **     Abstract:
 **         Chip specific module features.
@@ -295,6 +295,12 @@
 #define FSL_FEATURE_MCM_CPCR_HAS_FCSDIS_BIT_FIELD (0)
 /* @brief If MCM CPCR register has XBARARB bit field. */
 #define FSL_FEATURE_MCM_CPCR_HAS_XBARARB_BIT_FIELD (1)
+/* @brief If MCM has reverse carry (CPCR RCDIS bit field). */
+#define FSL_FEATURE_MCM_HAS_REVERSE_CARRY (1)
+/* @brief If MCM has core instruction buffer (CPCR IBDIS bit field). */
+#define FSL_FEATURE_MCM_HAS_INSTRUCTION_BUFFER (1)
+/* @brief If MCM has resource protection (RPCR register). */
+#define FSL_FEATURE_MCM_HAS_RESOURCE_PROTECTION (1)
 
 /* PIT module features */
 

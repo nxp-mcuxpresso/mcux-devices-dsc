@@ -6,13 +6,13 @@
 **     Compiler:            CodeWarrior C/C++ for DSP M56800E
 **     Reference manual:    Manual version TBD
 **     Version:             rev. 1.0, 2024-10-29
-**     Build:               b250520
+**     Build:               b260212
 **
 **     Abstract:
 **         Peripheral Access Layer for MC56F83769
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2025 NXP
+**     Copyright 2016-2026 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -261,6 +261,8 @@ typedef enum IRQn {
 #define COP_BASE_ADDRS                           { COP_BASE }
 /** Array initializer of COP peripheral base pointers */
 #define COP_BASE_PTRS                            { COP }
+/* Backward compatibility */
+
 
 /* CRC - Peripheral instance base addresses */
 /** Peripheral CRC base address */
@@ -538,6 +540,8 @@ typedef enum IRQn {
 #define USB_BASE_ADDRS                           { USB_BASE }
 /** Array initializer of USB peripheral base pointers */
 #define USB_BASE_PTRS                            { USB }
+/** Interrupt vectors for the USB peripheral type */
+#define USB_IRQS                                 { USB_IRQn }
 
 /* XBARA - Peripheral instance base addresses */
 /** Peripheral XBARA base address */

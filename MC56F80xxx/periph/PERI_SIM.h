@@ -18,13 +18,13 @@
 **                          MC56F80748VLH
 **
 **     Version:             rev. 1.0, 2024-10-29
-**     Build:               b250520
+**     Build:               b260810
 **
 **     Abstract:
 **         CMSIS Peripheral Access Layer for SIM
 **
 **     Copyright 1997-2016 Freescale Semiconductor, Inc.
-**     Copyright 2016-2025 NXP
+**     Copyright 2016-2026 NXP
 **     SPDX-License-Identifier: BSD-3-Clause
 **
 **     http:                 www.nxp.com
@@ -358,8 +358,8 @@ typedef struct {
   __IO uint16_t CTRL;                              /**< Control Register, offset: 0x0 */
   __I  uint16_t RSTAT;                             /**< Reset Status Register, offset: 0x1 */
        uint16_t RESERVED_0[4];
-       uint16_t MSHID;                             /**< Most Significant Half of JTAG ID, offset: 0x6 */
-       uint16_t LSHID;                             /**< Least Significant Half of JTAG ID, offset: 0x7 */
+  __I  uint16_t MSHID;                             /**< Most Significant Half of JTAG ID, offset: 0x6 */
+  __I  uint16_t LSHID;                             /**< Least Significant Half of JTAG ID, offset: 0x7 */
   __IO uint16_t PWR;                               /**< Power Control Register, offset: 0x8 */
        uint16_t RESERVED_1[1];
   __IO uint16_t CLKOUT;                            /**< Clock Output Select Register, offset: 0xA */
